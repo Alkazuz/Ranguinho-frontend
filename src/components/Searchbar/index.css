@@ -1,0 +1,44 @@
+.search-input{
+    background-color: #f7f7f7;
+    margin-left: 32px;
+    width: 30%;
+    height: 35px;
+    margin-top: 10px;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.search-input .lupa{
+    width: 35px;
+    height: 35px;
+    color: #64256a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-input .input-text{
+    font-size: 24px;
+    width: 100%;
+}
+
+input{
+    display: flex;
+    height: 30px;
+    padding-right: 0;
+    line-height: 1.25em;
+    font-weight: 300;
+    border-radius: 8px;
+    width: 100%;
+    background: transparent;
+    border-color: transparent;
+    border: none;
+}
+
+input:focus{
+    outline: none !important;
+    border:0px solid transparent;
+    color: #213547
+}
