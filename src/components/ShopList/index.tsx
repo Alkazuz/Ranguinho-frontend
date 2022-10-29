@@ -21,6 +21,7 @@ function ShopList(){
     const [data, setData] = useState([])
 
     let consultaAPI = async () => {
+      setLoading(false)
       await api.post('/restaurant/list', {lat: -18.9971648, log: -57.6569564})
         .then(response => {
           setData(response.data)
@@ -32,7 +33,6 @@ function ShopList(){
     
         if (loading) {
           consultaAPI();
-          setLoading(false)
         }
       }, [loading])
 
