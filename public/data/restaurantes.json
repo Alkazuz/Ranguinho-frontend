@@ -1,0 +1,74 @@
+[
+    {
+      "id": 1,
+      "name": "Malik Esfiharia",
+      "rate": 4.7,
+      "image": "https://static-images.ifood.com.br/image/upload/t_medium/logosgde/ceab84cc-0d35-4eee-b6fa-25b3c9827e9f/202009211935_DeFK_i.jpg",
+      "delivery_price": 1.5,
+      "category": "Árabe",
+      "geopoint": {
+        "latitude": -18.9993389,
+        "longitude": -57.6581907
+      }
+    },
+    {
+      "id": 2,
+      "name": "Mr Fit Home",
+      "rate": 5.0,
+      "image": "https://static-images.ifood.com.br/image/upload/t_medium/logosgde/047e7bd3-4528-4b2a-a729-98c9250c384c/202110211045_ZWsF_.jpeg",
+      "delivery_price": 1.5,
+      "category": "Saudável",
+      "geopoint": {
+        "latitude": -19.0033772,
+        "longitude": -57.6361571
+      }
+    },
+    {
+      "id": 3,
+      "name": "Kero Mais Açaí",
+      "image": "https://static-images.ifood.com.br/image/upload/t_medium/logosgde/2c3e2385-69b5-4f54-9c49-973c0ad07d67/202210211843_TaoI_i.jpg",
+      "delivery_price": 3,
+      "category": "Açaí",
+      "rate": 4.7,
+      "geopoint": {
+        "latitude": -19.0319221,
+        "longitude": -57.6448661
+      }
+    },
+    {
+      "id": 4,
+      "name": "Restaurante Brazão",
+      "image": "https://static-images.ifood.com.br/image/upload/t_medium/logosgde/74b38ffe-b841-4a33-9246-558cbbf2454f/202207212300_GU4j_i.jpg",
+      "delivery_price": 3,
+      "category": "Brasileira",
+      "rate": 4.3,
+      "geopoint": {
+        "latitude": -18.998235,
+        "longitude": -57.6545491
+      }
+    },
+    {
+      "id": 5,
+      "name": "Restaurante Brazão",
+      "image": "https://static-images.ifood.com.br/image/upload/t_medium/logosgde/74b38ffe-b841-4a33-9246-558cbbf2454f/202207212300_GU4j_i.jpg",
+      "delivery_price": 3,
+      "category": "Brasileira",
+      "rate": 4.3,
+      "geopoint": {
+        "latitude": -18.998235,
+        "longitude": -57.6545491
+      }
+    },
+    {
+      "id": 6,
+      "name": "Restaurante Brazão",
+      "image": "https://static-images.ifood.com.br/image/upload/t_medium/logosgde/74b38ffe-b841-4a33-9246-558cbbf2454f/202207212300_GU4j_i.jpg",
+      "delivery_price": 3,
+      "category": "Brasileira",
+      "rate": 4.3,
+      "geopoint": {
+        "latitude": -18.998235,
+        "longitude": -57.6545491
+      }
+    }
+  ]
