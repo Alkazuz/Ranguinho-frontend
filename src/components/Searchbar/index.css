@@ -1,9 +1,7 @@
 .search-input{
     background-color: #f7f7f7;
-    margin-left: 32px;
-    width: 30%;
+    width: 70%;
     height: 35px;
-    margin-top: 10px;
     border-radius: 5px;
     padding: 5px;
     display: flex;

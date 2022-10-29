@@ -1,0 +1,9 @@
+.cardlist{
+    padding: 5px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+h1{
+    font-size: 24px;
+}
