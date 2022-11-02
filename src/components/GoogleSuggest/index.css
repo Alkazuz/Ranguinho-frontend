@@ -1,0 +1,22 @@
+.locationContainer{
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #717171;
+}
+
+.locationIcon{
+    width: 24px;
+    height: 24px;
+}
+
+.locationInfo{
+    gap: 4px;
+    display: grid;
+    text-align: left;
+    align-content: center;
+    flex-grow: 1;
+    transition: all .2s ease-in-out;
+    word-break: break-word;
+    color: #717171;
+}
