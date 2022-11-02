@@ -51,10 +51,15 @@ function ShopCard(props: ShopInterface) {
 
     const calc_delivery = () => {
         let price = distance * props.delivery_price;
+        if(price == 0)
         if(price < props.delivery_price) price = props.delivery_price;
         
         return price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});;
     }
+
+    let price = props.delivery_price == 0 ? 
+            <div className='time'>30-40 min • <div className='free'>Grátis</div></div> : 
+    <div className='time'>30-40 min • {calc_delivery()}</div>;
 
     return (
             <div className="card" key={props.id}>
@@ -67,15 +72,16 @@ function ShopCard(props: ShopInterface) {
                     <div className="info">
                         <div className="rate">
                             <FaStar/>
-                            <div className='rate-value'>{3.0.toFixed(1)}</div>
+                            <div className='rate-value'>Novo</div>
                         </div>
                         <div className="description">
                             <div>• {props.category} • {distance} km</div>
                             
                         </div>
                     </div>
-                    
-                    <div className='time'>30-40 min • {calc_delivery()}</div>
+                    {
+                        price
+                    }
                 </div>
             </div>
     );

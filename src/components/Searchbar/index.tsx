@@ -3,6 +3,7 @@ import React, { useState, KeyboardEvent } from 'react';
 import './index.css'
 
 import { FaSearch } from "react-icons/fa";
+import { useNavigate } from 'react-router';
 
 function Searchbar(){
 
@@ -10,7 +11,8 @@ function Searchbar(){
 
     const handleKeyDown = (event: KeyboardEvent<HTMLImageElement>) => {
         if (event.key === 'Enter') {
-          console.log('do validate')
+          const navigate = useNavigate();
+          navigate(`/buscar?q=${input}`)
         }
       }
 

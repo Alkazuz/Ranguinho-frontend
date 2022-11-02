@@ -27,6 +27,13 @@
     font-size: 16px;
 }
 
+a{
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    margin-top: .5em;
+}
+
 .navbar ol li img{
     width: 50px;
     height: auto;
