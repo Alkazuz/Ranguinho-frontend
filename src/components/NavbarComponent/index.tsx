@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import GoogleSuggest from '../GoogleSuggest';
 import Searchbar from '../Searchbar';
 
 import './index.css'
@@ -24,7 +25,7 @@ class NavbarComponent extends Component {
                     </div>
                     
                     <div className="navs">
-                        <p>R. Fulano de Tal</p>
+                        <GoogleSuggest />
                     </div>
 
 
