@@ -1,24 +1,27 @@
 .locationWrapper{
     display: flex;
     align-items: center;
+    flex-direction: row;
     position: relative;
     font-size: 14px;
+    width: 100%;
     font-weight: 500;
     color: var(--p-color);
-}
-
-.locationIcon{
-    width: 24px;
-    height: 24px;
+    margin-top: 5px;
+    padding: 5px;
 }
 
 .locationInfo{
-    gap: 4px;
-    display: grid;
-    text-align: left;
-    align-content: center;
-    flex-grow: 1;
-    transition: all .2s ease-in-out;
-    word-break: break-word;
-    color: #717171;
+    color: var(--p-color);
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    margin-left: 5px;
+}
+
+.locationInfo2{
+    color: var(--p-color);
+    font-size: 12px;
+    font-weight: 500;
 }

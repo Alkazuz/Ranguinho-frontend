@@ -1,11 +1,33 @@
 .address-menu{
     max-width: 200px;
     height: auto;
-    position: relative;
     display: flex;
     flex-direction: row;
     color: var(--p-color);
 }
+
+
+.btn-save{
+    width: 80%;
+    font-weight: 600;
+    height: 50px;
+}
+
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: flex; /* Hidden by default */
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: auto;
+  }
 
 .title{
     font-size: 14px;
@@ -13,36 +35,30 @@
     
 }
 
-.search-input-address{
+.input-address{
     background-color: #f7f7f7;
     width: 80%;
-    height: 35px;
+    align-items: center;
+    height: 50px;
     border-radius: 5px;
     display: flex;
     flex-direction: row;
+    margin: 5px;
 }
 
-.search-input-address .lupa{
-    width: 35px;
-    height: 35px;
-    color: var(--color);;
+.input-address .lupa{
+    width: 50px;
+    height: auto;
+    color: var(--color);
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.search-input-address .input-text{
-    font-size: 24px;
-}
-   
-
-.navbar{
-    display: flex;
-    position: absolute;
-    width: 80%;
-    height: 54px;
-    align-items: start;
-    justify-content: space-between;
+.input-address .input-text{
+    font-size: 32px;
+    color: var(--color);
+    width: 90%;
 }
 
 .navbar .navs{
@@ -122,13 +138,14 @@ a{
 }
 
 .address-menu-open{
-    position: absolute;
-    width: 300px;
-    height: 300px;
+    position: relative;
+    width: 600px;
+    height: 430px;
     background-color: white;
     z-index: 3;
-    top: 100%;
+    border-radius: 4px;
     cursor: auto;
+    padding: 10px;
 }
 
 .address-menu-content{

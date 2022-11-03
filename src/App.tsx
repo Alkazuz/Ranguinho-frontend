@@ -5,8 +5,8 @@ import Welcome from './pages/welcome'
 import Restaurante from './pages/restaurante'
 import PhoneLogin from './pages/login/PhoneLogin'
 import EmailLogin from './pages/login/EmailLogin'
-import LoginBase from './pages/login/LoginBase'
-import { Restaurantes } from './pages/restaurantes'
+import Restaurantes from './pages/restaurantes'
+import LoginMain from './pages/login/LoginMain'
 
 function App() {
 
@@ -20,7 +20,7 @@ function App() {
         <Route path='/restaurante/:id' element={<Restaurante />} />
         <Route path='/restaurantes' element={<Restaurantes />} />
 
-        <Route path='/login' element={<LoginBase />} />
+        <Route path='/login' element={<LoginMain />} />
         <Route path='/login/celular' element={<PhoneLogin />} />
         <Route path='/login/email' element={<EmailLogin />} />
 

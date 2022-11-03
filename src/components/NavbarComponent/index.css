@@ -5,20 +5,33 @@
     justify-content: center;
     border: 1px solid #dddddc;
     position: relative;
-    height: 60px;
+    height: 120px;
 }
 
 .selected{
     color: var(--color);;
   }
 
+.logout{
+    fill: var(--color);
+    cursor: pointer;
+    margin-left: 20px;
+}
+
 .navbar{
+    position: -webkit-sticky;
+    position: sticky;
     display: flex;
-    position: absolute;
-    width: 80%;
-    height: 54px;
-    align-items: start;
-    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    grid-column-gap: 24px;
+    -moz-column-gap: 24px;
+    column-gap: 24px;
+    height: 80px;
+    background-color: #fff;
+    top: 0;
+    z-index: 9997;
+    padding: 20px 32px;
 }
 
 .navbar .navs{
@@ -28,7 +41,7 @@
 }
 
 ul{
-    min-width: 300px;
+    min-width: 360px;
     display: flex;
     flex-flow: row nowrap;
 }

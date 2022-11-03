@@ -18,18 +18,37 @@
   --p-color: #717171;
 }
 
-.btn{
+.field_number{
+  padding: 20px;
+}
+
+.btn-login{
   padding: 5px 20px;
   display: inline-flex;
   align-items: center;
   width: 300px;
   border: 0;
   margin: 10px;
+
   transition: .1s;
-    transition-duration: 0.1s;
-    transition-timing-function: ease;
-    transition-delay: 0s;
-    transition-property: all;
+  transition-duration: 0.1s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: all;
+}
+
+.btn{
+  padding: 5px 20px;
+  align-items: center;
+  width: 300px;
+  border: 0;
+  margin: 10px;
+
+  transition: .1s;
+  transition-duration: 0.1s;
+  transition-timing-function: ease;
+  transition-delay: 0s;
+  transition-property: all;
 }
 
 .btn-label{
@@ -80,18 +99,23 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: var(--color);
+  color: #ffff;
   cursor: pointer;
-  transition: border-color 0.25s;
+  justify-items: center;
+  text-align: center;
+  transition: all 0.25s;
 }
+
+button:hover {
+  background-color: #a63eaa;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
     background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
   }
   button {
     background-color: #f9f9f9;

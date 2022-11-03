@@ -1,13 +1,14 @@
 import { FacebookAuthProvider, getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect } from 'firebase/auth';
 import type { FC, ReactNode } from 'react'
+import { useNavigate } from 'react-router';
 import { ErrorBox } from '../../../components/ErrorBox';
 import { handleFirebaseError } from '../../../utils/firebaseError';
 import { providerFacebook, providerGoogle } from '../../../utils/providers';
-import { LoginBase } from '../LoginBase'
+import LoginBase, { LoginPageClass } from '../LoginBase';
 
 import "./index.css"
 const auth = getAuth();
-export class LoginMain extends LoginBase{
+export class Class extends LoginPageClass{
   
   constructor(props) {
     super(props);
@@ -16,12 +17,24 @@ export class LoginMain extends LoginBase{
     };
   }
 
+  componentDidMount(): void {
+    super.componentDidMount();
+  }
+
   render(): ReactNode {
 
     const handlerFacebookClick = async () => {
     
-      const data = await signInWithPopup(auth, providerFacebook);
-      const user = data.user;
+      try{
+        const data = await signInWithPopup(auth, providerFacebook)
+        const user = data.user;
+        
+      }catch(err){
+        this.setState({
+          error: handleFirebaseError(err),
+        });
+      }
+    
     }
 
     const handlerGoogleClick = async () => {
@@ -73,4 +86,11 @@ export class LoginMain extends LoginBase{
       </div> );
   }
 }
+
+function LoginMain() {
+  let navigate = useNavigate();
+  return <Class navigate={navigate} />
+}
+
+export default LoginMain
 

@@ -5,14 +5,19 @@ import { auth } from '../../utils/firebase';
 
 import api from '../../services/api';
 import { User } from 'firebase/auth';
+import { PropNagivation } from '../login/LoginBase';
 
-export class BasePage extends Component{
+export class BasePage extends Component<PropNagivation>{
 
     constructor(props){
         super(props);
         this.state = {
             userInfo: {}
         }
+    }
+
+    signOut(): void{
+        console.log('deslogado')
     }
 
     componentDidMount(): void {
@@ -24,6 +29,8 @@ export class BasePage extends Component{
                     this.setState({userInfo: response.data})
                 
                 })
+            }else{
+                this.props.navigate('/login')
             }
         });
     }

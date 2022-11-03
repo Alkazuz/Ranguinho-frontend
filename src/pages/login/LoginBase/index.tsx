@@ -5,11 +5,11 @@ import { User } from 'firebase/auth';
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { auth } from "../../../utils/firebase";
 
-interface LoginBaseInterface{
+export interface PropNagivation{
     navigate:  NavigateFunction
 }
 
-class Class extends Component<LoginBaseInterface>{
+export class LoginPageClass extends Component<PropNagivation>{
 
     
     constructor(props) {
@@ -21,7 +21,6 @@ class Class extends Component<LoginBaseInterface>{
     
     componentDidMount(): void {
         let _this = this;
-
         auth.onAuthStateChanged((user: User | null) => {
             
             if (user) {
@@ -42,7 +41,7 @@ class Class extends Component<LoginBaseInterface>{
 
 function LoginBase() {
     let navigate = useNavigate();
-    return <Class navigate={navigate} />
+    return <LoginPageClass navigate={navigate} />
 }
 
 export default LoginBase
