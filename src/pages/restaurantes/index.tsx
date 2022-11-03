@@ -1,19 +1,22 @@
-import type { FC } from 'react'
+import type { FC, ReactNode } from 'react'
 import NavbarComponent from '../../components/NavbarComponent'
 import ShopList from '../../components/ShopList'
+import { BasePage } from '../BasePage'
 
 import './index.css'
 
-const Welcome: FC = () => {
-  return (
+export class Restaurantes extends BasePage{
+  
+  render(): ReactNode {
+    return (
       <>
 
-        <NavbarComponent />
+        <NavbarComponent user={this.state.userInfo} />
         <div className="content">
           <ShopList />
         </div>
-      </>
-  )
+      </>)
+
+  }
 }
 
-export default Welcome

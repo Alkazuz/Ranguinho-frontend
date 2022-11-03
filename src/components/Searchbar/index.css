@@ -10,7 +10,7 @@
 .search-input .lupa{
     width: 35px;
     height: 35px;
-    color: #7F2982;
+    color: var(--color);;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,6 +32,7 @@ input{
     background: transparent;
     border-color: transparent;
     border: none;
+    color: var(--p-color);
 }
 
 input:focus{

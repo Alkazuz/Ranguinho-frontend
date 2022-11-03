@@ -22,14 +22,12 @@ export class LoginMain extends LoginBase{
     
       const data = await signInWithPopup(auth, providerFacebook);
       const user = data.user;
-      console.log(user)
     }
 
     const handlerGoogleClick = async () => {
       try{
         const data = await signInWithPopup(auth, providerGoogle)
         const user = data.user;
-        console.log(user)
       }catch(err){
         this.setState({
           error: handleFirebaseError(err),

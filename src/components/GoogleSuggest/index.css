@@ -1,8 +1,10 @@
-.locationContainer{
+.locationWrapper{
     display: flex;
     align-items: center;
-    font-size: 16px;
-    color: #717171;
+    position: relative;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--p-color);
 }
 
 .locationIcon{

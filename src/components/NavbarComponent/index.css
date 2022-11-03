@@ -9,7 +9,7 @@
 }
 
 .selected{
-    color: #7F2982;
+    color: var(--color);;
   }
 
 .navbar{

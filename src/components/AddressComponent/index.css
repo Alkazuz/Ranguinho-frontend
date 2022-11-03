@@ -1,0 +1,143 @@
+.address-menu{
+    max-width: 200px;
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    color: var(--p-color);
+}
+
+.title{
+    font-size: 14px;
+    font-weight: 600;
+    
+}
+
+.search-input-address{
+    background-color: #f7f7f7;
+    width: 80%;
+    height: 35px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.search-input-address .lupa{
+    width: 35px;
+    height: 35px;
+    color: var(--color);;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-input-address .input-text{
+    font-size: 24px;
+}
+   
+
+.navbar{
+    display: flex;
+    position: absolute;
+    width: 80%;
+    height: 54px;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.navbar .navs{
+    display: flex;
+    font-size: 14px;
+    font-weight: 900;
+}
+
+ul{
+    min-width: 300px;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+ul>li {
+    list-style: none;
+}
+
+.navs p{
+    font-size: .875rem;
+    font-weight: 500;
+}
+
+.navbar ol li{
+    display: block;
+    margin-left: 16px;
+    font-size: 16px;
+}
+
+a{
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    margin: 5px;
+}
+
+.navbar img{
+    width: 50px;
+    height: auto;
+}
+
+.nav-center{
+    width: 33%;
+}
+
+.field{
+    font-size: 14px;
+    color: var(--p-color);
+    font-weight: 700;
+}
+
+.icon{
+    fill: var(--color);
+    width: 12px;
+    height: auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+}
+
+.address-menu:hover{
+    cursor: pointer;
+}
+
+.address{
+    font-size: .875rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 90%;
+}
+
+.address-menu-open{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: white;
+    z-index: 3;
+    top: 100%;
+    cursor: auto;
+}
+
+.address-menu-content{
+    margin-top: 10%;
+    display: flex;
+    width: 100%;
+    position: relative;
+    fill: var(--color);
+    height: 100%;
+    align-items: center;
+    flex-direction: column;
+}

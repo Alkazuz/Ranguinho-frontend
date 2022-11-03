@@ -9,7 +9,6 @@ function ShopCard(props: RestaurantInterface) {
 
     const [loading, setLoading] = useState(true);
     const [distance, setDistance] = useState(0.3);
-    const navigation = useNavigate();
     
     useEffect(() => {
         
