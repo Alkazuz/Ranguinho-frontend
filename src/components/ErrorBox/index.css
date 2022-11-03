@@ -1,0 +1,47 @@
+.container-error{
+    background-color: #fdedeb;
+    width: 350px;
+    height: 35px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    color: rgb(97, 26, 21);
+    font-size: 0.875rem;
+}
+
+.icon-error {
+    fill: #f44336;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    width: 16px;
+    height: 100%;
+    left: 7%;
+}
+
+.icon-close{
+    fill: rgb(97, 26, 21);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: 2%;
+    display: flex;
+    width: 16px;
+    height: 100%;
+}
+
+.close-div{
+    height: 50%;
+    width: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-div:hover{
+    background-color: #bc9c94;
+    cursor: pointer;
+}

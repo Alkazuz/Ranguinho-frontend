@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import Welcome from './pages/welcome'
 import Restaurante from './pages/restaurante'
 import PhoneLogin from './pages/login/PhoneLogin'
-import LoginMain from './pages/login/LoginMain'
 import EmailLogin from './pages/login/EmailLogin'
 import Restaurantes from './pages/restaurantes'
+import { LoginMain } from './pages/login/LoginMain'
 
 function App() {
 
