@@ -1,39 +1,46 @@
 import React, { Component } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import GoogleSuggest from '../GoogleSuggest';
 import Searchbar from '../Searchbar';
 
 import './index.css'
 
-class NavbarComponent extends Component {
-    render() {
-        return (
-            <div style={{position: 'relative', height:'auto'}}>
-                <div className="navbar">
-                    <div className="navs">
-                        <ol>
-                            <li>
-                                <img src="images/logo.webp" alt="" />
-                            </li>
+function NavbarComponent(){
 
-                            <li><a href='/' className='selected'>Início</a></li>
-                            <li><a href='/'>Restaurantes</a></li>
-                        </ol>
-                    </div>
-                
-                    <div className="navs">
-                        <Searchbar />
-                    </div>
-                    
-                    <div className="navs">
-                        <GoogleSuggest />
-                    </div>
+    const location = useLocation().pathname;
 
-
+    let inicio = location.includes("/inicio") || location == '/' ? <Link className='selected' to="/">Início</Link> : <Link to="/">Início</Link>
+    let restaurant = location.includes("/restaurante") ? <Link className='selected' to="/restaurantes">Restaurantes</Link> : <Link to="/restaurantes">Restaurantes</Link>
+    return (
+        <div className="nav-header">
+            <div className="navbar">
+                <div className="navs">
+                    <a href='/'><img src="/images/logo.webp" alt="" /></a>
+                    <ul>
+                        <li>{inicio}</li>
+                        <li>{restaurant}</li>
+                    </ul>
                 </div>
-            </div>
             
-        );
-    }
+                <div className="navs">
+                    <ul>
+                        <li style={{width: '100%'}}><Searchbar /></li>
+                    </ul>
+                    
+                </div>
+                
+                <div className="navs">
+                    <ul>
+                        <li><GoogleSuggest /></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </div>
+        
+        
+    );
 }
 
 export default NavbarComponent;
