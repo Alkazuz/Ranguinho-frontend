@@ -1,0 +1,118 @@
+.rounded-background{
+    background-color: #F7B2B7;
+    position: absolute;
+    border-radius: 0 60% 50% 0;
+    height: 150%;
+    top: -260px;
+    right: 100px;
+    width: 100%;
+    opacity: 20%;
+    z-index: 1;
+}
+
+.container{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+.container-left{
+    width: 65%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.container-right{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+}
+
+.login-container{
+    background-color: white;
+    width: 510px;
+    padding: 20px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 5%), 0 4px 16px rgb(0 0 0 / 6%);
+}
+
+.title{
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+.btn-facebook{
+    background: #4065b4;
+    color: #fff;
+    
+}
+
+.btn-facebook:hover:enabled {
+    background: #6081c7;
+}
+
+.btn-google{
+    background: #fff;
+    color: #717171;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 5%), 0 4px 16px rgb(0 0 0 / 6%);
+}
+
+.btn-google:hover:enabled {
+    background: #f7f7f7;
+}
+
+.btn-facebook svg{
+    color: #fff;
+    fill: #fff;
+    width: 100%;
+    height: auto;
+}
+
+.btn-google svg{
+    color: #fff;
+    fill: #fff;
+    width: 100%;
+    height: auto;
+}
+
+.icon-login{
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    position: relative;
+    color: white;
+}
+
+.desc{
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: 400;
+    color: #717171;
+}
+
+.banner{
+    margin: auto;
+    height: 600px;
+    width: auto;
+    opacity: 100%;
+    z-index: 2;
+}
+
+@media only screen and (max-width: 1040px){
+    .container-left{
+        display: none;
+        width: 0%;
+    }
+    .container-right{
+        width: 100%;
+    }
+}
