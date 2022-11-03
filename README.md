@@ -2,7 +2,7 @@
 # Ranguinho - Front End
 
 Ranguinho é um pequeno projeto baseado no iFood para delivery de comida, utilizando firebase, typescript, react e vite
-
+- Backend (https://github.com/Alkazuz/Ranguinho-backend)
 
 ## Ferramentas usadas
 
