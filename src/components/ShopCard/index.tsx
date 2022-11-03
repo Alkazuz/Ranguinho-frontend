@@ -1,14 +1,16 @@
 import React, { Component, useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
-import { ShopInterface } from '../ShopList';
+import { useNavigate } from "react-router-dom";
+import { RestaurantInterface } from '../../constants/Interfaces';
 
 import './index.css'
 
-function ShopCard(props: ShopInterface) {
+function ShopCard(props: RestaurantInterface) {
 
     const [loading, setLoading] = useState(true);
     const [distance, setDistance] = useState(0.3);
-
+    const navigation = useNavigate();
+    
     useEffect(() => {
         
         if (loading) {
@@ -62,7 +64,8 @@ function ShopCard(props: ShopInterface) {
     <div className='time'>30-40 min • {calc_delivery()}</div>;
 
     return (
-            <div className="card" key={props.id}>
+            <a href={`/restaurante/${props.uuid}`}>
+                <div className="card" key={props.uuid} >
                 <div className="image">
                     <img src={props.logo} alt="" />
                 </div>
@@ -84,6 +87,8 @@ function ShopCard(props: ShopInterface) {
                     }
                 </div>
             </div>
+            </a>
+            
     );
 }
 

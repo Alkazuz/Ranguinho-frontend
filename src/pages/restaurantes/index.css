@@ -1,0 +1,10 @@
+.restaurant-content{
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+.restaurant-info{
+    display: flex;
+}

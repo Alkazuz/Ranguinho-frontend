@@ -1,17 +1,7 @@
 import React, { useEffect, useState } from 'react';
+import { RestaurantInterface } from '../../constants/Interfaces';
 import api from '../../services/api';
 import ShopCard from '../ShopCard';
-
-export interface ShopInterface{
-    id: string,
-    name: string,
-    rate: number,
-    logo: string,
-    delivery_price: number,
-    category: string,
-    lat: number,
-    long: number
-}
 
 import './index.css'
 
@@ -41,7 +31,7 @@ function ShopList(){
             <h1>Lojas</h1>
             <div className="cardlist">
                 {
-                    data.map((shop: ShopInterface) => <ShopCard name={shop.name} logo={shop.logo} category={shop.category} lat={shop.lat} long={shop.long} id={shop.id} rate={shop.rate} delivery_price={shop.delivery_price} key={shop.id}/>)
+                    data.map((shop: RestaurantInterface) => <ShopCard name={shop.name} logo={shop.logo} category={shop.category} lat={shop.lat} long={shop.long} uuid={shop.uuid} rate={shop.rate} delivery_price={shop.delivery_price} key={shop.id}/>)
                 }
                 
             </div>
