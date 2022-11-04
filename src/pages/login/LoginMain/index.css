@@ -10,6 +10,23 @@
     z-index: 1;
 }
 
+.other-logins{
+    width: 300px;
+    display: flex;
+}
+
+.btn-other{
+    background: #fff;
+    display: inline-flex;
+    color: #717171;
+    font-weight: 600;
+    height: 40px;
+}
+
+.btn-other:hover:enabled{
+    background-color: #f7f7f7;
+}
+
 .error-div{
     padding: 20px;
     text-align: center;

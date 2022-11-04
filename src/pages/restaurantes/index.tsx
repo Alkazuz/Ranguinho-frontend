@@ -17,7 +17,7 @@ export class Class extends BasePage{
     return (
       <>
 
-        <NavbarComponent user={this.state.userInfo} onSignOut={this.signOut}/>
+        <NavbarComponent user={this.state.userInfo}  onSignOut={this.signOut}/>
         <div className="content">
           <ShopList />
         </div>

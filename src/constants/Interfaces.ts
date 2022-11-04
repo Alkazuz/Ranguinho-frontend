@@ -7,5 +7,13 @@ export interface RestaurantInterface{
     long: number,
     lat: number,
     logo: string,
-    geohash: string
+    geohash: string,
+    fee: number,
+    distance: number
+}
+
+export interface UserInfoInterface{
+    lat: number,
+    long: number,
+    address: string
 }

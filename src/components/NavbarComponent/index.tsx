@@ -8,9 +8,10 @@ import { auth } from '../../utils/firebase';
 import './index.css'
 import { AddressComponent } from '../AddressComponent';
 import { signOut, User } from 'firebase/auth';
+import { UserInfoInterface } from '../../constants/Interfaces';
 
 interface NavbarInterface{
-    user?: User | null | undefined,
+    user?: UserInfoInterface,
     onSignOut: () => void
 }
 

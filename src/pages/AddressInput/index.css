@@ -13,10 +13,9 @@
     height: 50px;
 }
 
-#overlay {
+#overlay-address {
     position: fixed; /* Sit on top of the page content */
-    display: absolute;
-    opacity: 0;
+    display: flex;
     justify-content: center;
     align-items: center;
     width: 100%; /* Full width (cover the whole page) */

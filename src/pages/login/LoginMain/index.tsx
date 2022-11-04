@@ -78,6 +78,16 @@ export class Class extends LoginPageClass{
                     Continuar com Google
                   </span>
                 </button>
+
+                <div className="other-logins">
+                  <button className='btn btn-other lite-shadow'>
+                    <span className="btn-label">Telefone</span>
+                  </button>
+                  <button className='btn btn-other lite-shadow'>
+                    <span className="btn-label">Email</span>
+                  </button>
+                </div>
+
                 {errorMsg && <ErrorBox msg={errorMsg} onClose={() => this.setState({error: ''})}/>}
             </div>
               
