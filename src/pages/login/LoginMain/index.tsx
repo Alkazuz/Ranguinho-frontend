@@ -1,6 +1,7 @@
 import { FacebookAuthProvider, getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect } from 'firebase/auth';
 import type { FC, ReactNode } from 'react'
 import { useNavigate } from 'react-router';
+import { Link } from 'react-router-dom';
 import { ErrorBox } from '../../../components/ErrorBox';
 import { handleFirebaseError } from '../../../utils/firebaseError';
 import { providerFacebook, providerGoogle } from '../../../utils/providers';
@@ -80,12 +81,17 @@ export class Class extends LoginPageClass{
                 </button>
 
                 <div className="other-logins">
-                  <button className='btn btn-other lite-shadow'>
-                    <span className="btn-label">Telefone</span>
-                  </button>
-                  <button className='btn btn-other lite-shadow'>
-                    <span className="btn-label">Email</span>
-                  </button>
+                  <Link to={"/login/telefone"}>
+                    <button className='btn btn-other lite-shadow'>
+                      <span className="btn-label">Telefone</span>
+                    </button>
+                    </Link>
+                  <Link to={"/login/email"}>
+                    <button className='btn btn-other lite-shadow'>
+                      <span className="btn-label">Email</span>
+                    </button>
+                  </Link>
+                  
                 </div>
 
                 {errorMsg && <ErrorBox msg={errorMsg} onClose={() => this.setState({error: ''})}/>}

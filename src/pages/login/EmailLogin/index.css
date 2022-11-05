@@ -25,11 +25,6 @@
     width: 130px;
 }
 
-.other-logins a{
-    margin: 0;
-    height: 40px;
-}
-
 .btn-other:hover:enabled{
     background-color: #f7f7f7;
 }
@@ -70,11 +65,17 @@
     width: 35%;
 }
 
+.login-sub-container{
+    position: relative;
+    width: 80%;
+}
+
 .login-container{
     background-color: white;
     width: 510px;
-    padding: 20px;
+    padding: 40px;
     border-radius: 4px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -82,9 +83,55 @@
     box-shadow: 0 1px 4px rgb(0 0 0 / 5%), 0 4px 16px rgb(0 0 0 / 6%);
 }
 
-.title{
-    font-size: 1.5rem;
-    text-align: center;
+input:focus ~ .floating-placeholder,
+input:not(:focus):valid ~ .floating-placeholder{
+  top: -10px;
+  bottom: 10px;
+  left: 20px;
+  font-size: 11px;
+  opacity: 1;
+  height: 23px;
+}
+
+.inputText {
+  font-size: 14px;
+  width: 200px;
+  height: 35px;
+}
+
+.input-field{
+    position: relative;
+    width: 100%;
+    margin: 20px 0 20px 0;
+}
+
+.floating-placeholder {
+  position: absolute;
+  pointer-events: none;
+  left: 20px;
+  top: 14px;
+  transition: 0.2s ease all;
+  color: var(--p-color);
+  font-size: .875rem;
+  background: #fff;
+}
+
+.back-div{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    fill: var(--color);
+}
+
+.login-container input{
+    background-color: white;
+    border-radius: 4px;
+    color: var(--p-color);
+    width: 408px;
+    height: 48px;
+    padding: 5px;
+    font-weight: 600;
+    border: 1px solid var(--border-color);
 }
 
 .btn-facebook{
@@ -130,8 +177,8 @@
     color: white;
 }
 
-.desc{
-    font-size: 1.5rem;
+.title-email{
+    font-size: 1.125rem;
     text-align: center;
     font-weight: 400;
     color: #717171;

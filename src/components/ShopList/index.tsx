@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { RestaurantInterface, UserInfoInterface } from '../../constants/Interfaces';
 import api from '../../services/api';
 import { auth, db } from '../../utils/firebase';
+import CardLoading from '../CardLoading';
 import ShopCard from '../ShopCard';
 
 import './index.css'
@@ -45,6 +46,21 @@ function ShopList(props: ShopInterface){
           });
         }
       })
+
+
+    if(loading){
+      return (
+        <div>
+            <h1>Lojas</h1>
+            
+            <div className="cardlist">
+                <CardLoading /><CardLoading /><CardLoading /><CardLoading />
+                <CardLoading /><CardLoading /><CardLoading /><CardLoading />
+                <CardLoading /><CardLoading /><CardLoading /><CardLoading />
+            </div>
+        </div>
+      )
+    }  
 
     return (
         <div>
