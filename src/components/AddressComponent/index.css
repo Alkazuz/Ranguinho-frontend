@@ -90,13 +90,6 @@ ul>li {
     font-size: 16px;
 }
 
-a{
-    margin: 0 auto;
-    align-items: center;
-    display: flex;
-    margin: 5px;
-}
-
 .navbar img{
     width: 50px;
     height: auto;

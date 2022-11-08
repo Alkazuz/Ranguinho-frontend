@@ -90,6 +90,7 @@ a {
   color: #213547;
   text-decoration: inherit;
 }
+
 a:hover {
   color: var(--color);;
 }

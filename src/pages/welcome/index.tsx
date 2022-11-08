@@ -1,6 +1,7 @@
 import type { FC, ReactNode } from 'react'
 import { useNavigate } from 'react-router'
-import NavbarComponent from '../../components/NavbarComponent'
+import NavbarComponent from '../../components/NavbarComponentDesktop'
+import NavbarComponentMobile from '../../components/NavbarComponentMobile'
 import ShopList from '../../components/ShopList'
 import { auth } from '../../utils/firebase'
 import { AddressInput } from '../AddressInput'
@@ -24,6 +25,8 @@ export class Class extends BasePage{
       <>
 
         <NavbarComponent user={this.state.userInfo} onSignOut={this.signOut}/>
+        <NavbarComponentMobile user={this.state.userInfo} onSignOut={this.signOut}/>
+        
         <div className="content">
           <ShopList user={this.state.userInfo} />
         </div>

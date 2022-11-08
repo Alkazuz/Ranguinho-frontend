@@ -1,6 +1,6 @@
 import type { FC, ReactNode } from 'react'
 import { useNavigate } from 'react-router'
-import NavbarComponent from '../../components/NavbarComponent'
+import NavbarComponent from '../../components/NavbarComponentDesktop'
 import ShopList from '../../components/ShopList'
 import { BasePage } from '../BasePage'
 
