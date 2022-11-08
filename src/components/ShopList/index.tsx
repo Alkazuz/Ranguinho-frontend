@@ -21,13 +21,13 @@ function ShopList(props: ShopInterface){
       setLoading(false)      
 
       if(props.user.address && props.user.lat && props.user.long){
-          await api.post('/restaurant/list', {lat: props.user.lat, log: props.user.long})
+          await api.get(`/restaurant/list?lat=${props.user.lat}&lng=${props.user.long}`)
           .then(response => {
             setData(response.data)
             
           })
       }else{
-        await api.post('/restaurant/list')
+        await api.get('/restaurant/list')
           .then(response => {
             setData(response.data)
             
