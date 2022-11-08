@@ -1,5 +1,6 @@
 import { doc, onSnapshot } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
+import { NavigateFunction } from 'react-router-dom';
 import { RestaurantInterface, UserInfoInterface } from '../../constants/Interfaces';
 import api from '../../services/api';
 import { auth, db } from '../../utils/firebase';
@@ -9,25 +10,27 @@ import ShopCard from '../ShopCard';
 import './index.css'
 
 interface ShopInterface{
-  user: UserInfoInterface
+  user: UserInfoInterface,
+  navigate:  NavigateFunction
 }
 
 function ShopList(props: ShopInterface){
 
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState([])
+    const [page, setPage] = useState(0)
 
     let consultaAPI = async () => {
       setLoading(false)      
 
       if(props.user.address && props.user.lat && props.user.long){
-          await api.get(`/restaurant/list?lat=${props.user.lat}&lng=${props.user.long}`)
+          await api.get(`/restaurant/list?lat=${props.user.lat}&lng=${props.user.long}&page=${page}`)
           .then(response => {
             setData(response.data)
             
           })
       }else{
-        await api.get('/restaurant/list')
+        await api.get(`/restaurant/list?page=${page}`)
           .then(response => {
             setData(response.data)
             
@@ -67,7 +70,7 @@ function ShopList(props: ShopInterface){
             <h1>Lojas</h1>
             <div className="cardlist">
                 {
-                    data.map((shop: RestaurantInterface) => <ShopCard fee={shop.fee} distance={shop.distance} name={shop.name} logo={shop.logo} category={shop.category} lat={shop.lat} long={shop.long} uuid={shop.uuid} rate={shop.rate} delivery_price={shop.delivery_price} key={shop.id}/>)
+                    data.map((shop: RestaurantInterface) => <ShopCard navigate={props.navigate} key={shop.id} data={shop} user={props.user}/>)
                 }
                 
             </div>

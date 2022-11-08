@@ -28,7 +28,7 @@ export class Class extends BasePage{
         <NavbarComponentMobile user={this.state.userInfo} onSignOut={this.signOut}/>
         
         <div className="content">
-          <ShopList user={this.state.userInfo} />
+          <ShopList user={this.state.userInfo} navigate={this.props.navigate}/>
         </div>
       </>)
 

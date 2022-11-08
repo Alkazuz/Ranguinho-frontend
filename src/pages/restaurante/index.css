@@ -1,10 +1,46 @@
-.restaurant-content{
-    padding: 5px;
+.content-restaurant {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.content-restaurant .restaurant-content{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     margin: 30px;
 }
 
-.restaurant-info{
+.content-restaurant .restaurant-content .banner{
     display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+.content-restaurant .restaurant-content .restaurant-info{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.restaurant-info .logo img{
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+}
+
+.restaurant-info .displayname{
+    font-size: 2.25rem;
+    line-height: 44px;
+}
+
+.restaurant-info .displayname h1{
+    font-size: 2.25rem;
+    font-weight: 500;
+    line-height: 0;
+}   
+
+.restaurant-info .rate{
+    font-size: 0.875rem;
+    line-height: 12px;
 }

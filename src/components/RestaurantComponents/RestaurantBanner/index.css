@@ -1,12 +1,14 @@
 .restaurant-banner{
-    width: 80%;
+    width: 1000px;
     display: inline-flex;
     height: 250px;
+    justify-content: center;
+    background: linear-gradient(#f7f7f791, #f7f7f7b8), url(/images/background-restaurant.png);
 }
 
 .restaurant-banner img {
-    width: 100%;
-    height: auto;
+    width: auto;
+    height: 100%;
     border-radius: 0px;
     filter: brightness(50%)
   }

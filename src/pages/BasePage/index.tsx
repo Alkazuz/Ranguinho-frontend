@@ -5,20 +5,25 @@ import { auth, db } from '../../utils/firebase';
 
 import api from '../../services/api';
 import { User } from 'firebase/auth';
-import { PropNagivation } from '../login/LoginBase';
 import { collection, doc, getDoc, getDocFromCache } from 'firebase/firestore';
+import { PropPage, UserInfoInterface } from '../../constants/Interfaces';
 
-export class BasePage extends Component<PropNagivation>{
+export class BasePage extends Component<PropPage>{
+
 
     constructor(props){
         super(props);
         this.state = {
-            userInfo: {}
+            userInfo: undefined 
         }
     }
 
     signOut(): void{
         console.log('deslogado')
+    }
+
+    onLoggedIn(userInfo: any): void{
+        this.setState({userInfo: userInfo});
     }
 
     componentDidMount(): void {
@@ -28,8 +33,8 @@ export class BasePage extends Component<PropNagivation>{
                 const usersRef = doc(db, "users", user.uid);
                 const docSnap  = await getDoc(usersRef);
                 if(docSnap.exists()){
-                    console.log(docSnap.data())
-                    this.setState({userInfo: docSnap.data()})
+                    const data = docSnap.data();
+                    this.onLoggedIn(data);
                 }
             }else{
                 this.props.navigate('/login')

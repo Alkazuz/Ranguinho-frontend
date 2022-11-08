@@ -1,11 +1,17 @@
 import React, { Component, useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
-import { useNavigate } from "react-router-dom";
-import { RestaurantInterface } from '../../constants/Interfaces';
+import { Link, NavigateFunction, useNavigate } from "react-router-dom";
+import { RestaurantInterface, UserInfoInterface } from '../../constants/Interfaces';
 
 import './index.css'
 
-function ShopCard(props: RestaurantInterface) {
+interface RestaurantModelInterface{
+    data: RestaurantInterface,
+    user: UserInfoInterface,
+    navigate:  NavigateFunction
+}
+
+function ShopCard(props: RestaurantModelInterface) {
 
     const [loading, setLoading] = useState(true);
     
@@ -16,37 +22,35 @@ function ShopCard(props: RestaurantInterface) {
         }
       }, [loading])
 
-    
-
-    let price = props.delivery_price == 0 ? 
+    let price = props.data.delivery_price == 0 ? 
             <div className='time'>30-40 min • <div className='free'>Grátis</div></div> : 
-    <div className='time'>30-40 min • {props.fee.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>;
+    <div className='time'>30-40 min • {props.data.fee.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>;
 
     return (
-            <a href={`/restaurante/${props.uuid}`}>
-                <div className="card" key={props.uuid} >
-                <div className="image">
-                    <img src={props.logo} alt="" />
-                </div>
-
-                <div className="content">
-                    <p className="name">{props.name}</p>
-                    <div className="info">
-                        <div className="rate">
-                            <FaStar/>
-                            <div className='rate-value'>Novo</div>
-                        </div>
-                        <div className="description">
-                            <div>• {props.category} • {props.distance} km</div>
-                            
-                        </div>
+            <Link to={`/restaurante/${props.data.id}`}>
+                 <div className="card" key={props.data.id} >
+                    <div className="image">
+                        <img src={props.data.logo} alt="" />
                     </div>
-                    {
-                        price
-                    }
+
+                    <div className="content">
+                        <p className="name">{props.data.name}</p>
+                        <div className="info">
+                            <div className="rate">
+                                <FaStar/>
+                                <div className='rate-value'>Novo</div>
+                            </div>
+                            <div className="description">
+                                <div>• {props.data.category} • {props.data.distance} km</div>
+                                
+                            </div>
+                        </div>
+                        {
+                            price
+                        }
+                    </div>
                 </div>
-            </div>
-            </a>
+            </Link>
             
     );
 }

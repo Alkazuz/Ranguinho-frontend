@@ -184,7 +184,7 @@ input:not(:focus):valid ~ .floating-placeholder{
     color: #717171;
 }
 
-.banner{
+.container .container-left .banner{
     margin: auto;
     height: 600px;
     width: auto;
