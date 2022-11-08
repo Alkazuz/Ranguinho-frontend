@@ -35,16 +35,16 @@
     font-weight: 900;
 }
 
-ul{
+.navs ul{
     display: flex;
     flex-flow: row nowrap;
 }
 
-ul>li {
+.navs ul>li {
     list-style: none;
 }
 
-ul>li a{
+.navs ul>li a{
     margin: 0 5px;
 }
 
@@ -68,30 +68,94 @@ ul>li a{
     width: 33%;
 }
 
-/*  Small devices (landscape phones, 576px and up)*/
-@media (min-width: 576px) {
 
- }
-/*  mobile devices */
-@media (max-width: 768px) { 
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  
+    .nav-header{
+            
+        display: flex;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    
+    .nav-header{
+            
+        display: flex;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    
     .nav-header{
             
         display: none;
     }
- }
-/*  Large devices (desktops, 992px and up)*/
-@media (min-width: 992px) {  
+    .navs ul{
+        min-width: 220px;
+    }
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     
     .nav-header{
             
-        display: relative;
+        display: none;
     }
-}
-/*  X-Large devices (large desktops, 1200px and up)*/
-@media (min-width: 1200px) { 
+    
+    .navs ul{
+        min-width: 220px;
+    }
 
- }
-/* XX-Large devices (larger desktops, 1400px and up) */
-@media (min-width: 1400px) { 
-
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    
+    .nav-header{
+            
+        display: none;
+    }
+    
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+@media (min-width: 320px) and (max-width: 480px) {
+    
+    .nav-header{
+            
+        display: none;
+    }
+    
 }
+
