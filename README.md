@@ -11,6 +11,19 @@ Ranguinho é um pequeno projeto baseado no iFood para delivery de comida, utiliz
 - Vite (https://vitejs.dev/)
 - node-geohash (https://www.npmjs.com/package/ngeohash)
 - Typescript (https://www.typescriptlang.org/)
+
+## Regras Firestore
+
+```bash
+    rules_version = '2';
+    service cloud.firestore {
+    match /databases/{database}/documents {
+            match /users/{uid} {
+                allow write, update, read: if request.auth != null && request.auth.uid == uid;
+            }
+        }
+    }
+```
 ## Screenshots
 
 ![Login](https://i.imgur.com/Ok8J2rH.png)
