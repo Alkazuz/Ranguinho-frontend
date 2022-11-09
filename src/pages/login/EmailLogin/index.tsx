@@ -3,12 +3,14 @@ import type { FC, ReactNode } from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import { ErrorBox } from '../../../components/ErrorBox';
 import { handleFirebaseError } from '../../../utils/firebaseError';
-import { providerFacebook, providerGoogle } from '../../../utils/providers';
 import LoginBase, { LoginPageClass } from '../LoginBase';
 
+import LogoBanner from '../../../../public/images/banner-login.png'
+
 import "./index.css"
+import EmailForm from './EmailForm';
+import PasswordForm from './PasswordForm';
 const auth = getAuth();
 export class Class extends LoginPageClass{
   
@@ -41,89 +43,52 @@ export class Class extends LoginPageClass{
           </div></Link>
 
     
-
-    const onClickContinue = async () => {
+    const onChangeEmail = (email: string) => {
+      this.setState({email: email});
       this.setState({step: this.state.step + 1})
-      console.log(this.state.step)
-      if(this.state.step == 1){
-        try{
-          const data = await signInWithEmailAndPassword(auth, this.state.email, this.state.password)
-          const user = data.user;
-          
-        }catch(err){
-          this.setState({
-            error: handleFirebaseError(err),
-          });
-          this.setState({step: this.state.step - 1})
-        }
+
+      
+    }
+
+    const onChangePassword = async (password: string) => {
+      this.setState({password: password});
+      try{
+        const data = await signInWithEmailAndPassword(auth, this.state.email, password)
+        const user = data.user;
+        
+      }catch(err){
+        this.setState({
+          error: handleFirebaseError(err),
+        });
+        this.setState({step: this.state.step - 1})
       }
     }
 
-    if(this.state.step == 0){
-      return (
-        <div className="container">
-            <div className="container-left">
-              
-              <LazyLoadImage src="images/banner-login.png" alt="" className="banner" />
-              <div className="rounded-background"></div>
+    return (
+
+      <div className="container-login">
+          
+          <div className="container">
+          <div className="rounded-background"></div>
+            <div className="image-left">
+              <LazyLoadImage src={LogoBanner} alt="" className="banner" />
             </div>
-            <div className="container-right">
-              <div className="login-container">
+
+            <div className="login-right">
+              <div className="login-container box-div lite-shadow login-size">
                 {backDiv}
                 
-                  <div className="login-sub-container">
-                    <h1 className="title-email">Informe o seu e-mail para continuar</h1>
-                    
-                    <div className="input-field">
-                      <input type="text" className='box-div' placeholder=' ' required onChange={(e) => this.setState({email: e.target.value})}/>
-                      <span className="floating-placeholder">Informe o seu e-mail</span>
-                    </div>
-                    
-                    
 
-                    <button className="btn-ranguinho width-100 height-50" onClick={onClickContinue}>
-                      Continuar
-                    </button>
-                    {errorMsg && <ErrorBox msg={errorMsg} onClose={() => this.setState({error: ''})}/>}
-                  </div>
-                 
-              </div>
-                
-    
-            </div>
-        </div> );
-    }
-    
-
-    return (
-      <div className="container">
-          <div className="container-left">
-            
-            <LazyLoadImage src="images/banner-login.png" alt="" className="banner" />
-            <div className="rounded-background"></div>
-          </div>
-          <div className="container-right">
-            <div className="login-container">
-              {backDiv}
-              
                 <div className="login-sub-container">
-                  <h1 className="title-email">Informe a sua senha para continuar</h1>
+                  {this.state.step == 0 && <><h1 className="title-email">Informe o seu e-mail para continuar</h1><EmailForm onReceiveEmail={onChangeEmail} /></>}
+                  {this.state.step == 1 && <><h1 className="title-email">Informe a sua senha para continuar</h1><PasswordForm onReceivePassword={onChangePassword}/></>}
                   
-                  <div className="input-field">
-                    <input type="password" className='box-div' required onChange={(e) => this.setState({password: e.target.value})} />
-                    <span className="floating-placeholder">Informe a sua senha</span>
-                  </div>
-                  
-
-                  <button className="btn-ranguinho width-100 height-50" onClick={onClickContinue}>
-                    Continuar
-                  </button>
-                  {errorMsg && <ErrorBox msg={errorMsg} onClose={() => this.setState({error: ''})}/>}
                 </div>
-               
+                </div>
             </div>
-              
-  
+
+            
+
           </div>
       </div> );
   }

@@ -1,19 +1,26 @@
-.rounded-background{
-    background-color: #F7B2B7;
+.rounded-background {
+    background-color: var(--color);
+    display: block;
     position: absolute;
-    border-radius: 0 60% 50% 0;
-    height: 150%;
-    top: -260px;
-    right: 100px;
+    border-radius: 0 50% 50% 0;
+    height: 140%;
+    top: -30%;
+    right: 45%;
     width: 100%;
     opacity: 20%;
-    z-index: 1;
 }
 
 .other-logins{
     width: 300px;
     display: flex;
-    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.back-div{
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    fill: var(--color);
 }
 
 .btn-other{
@@ -47,42 +54,21 @@
     height: 5px;
 }
 
-.container{
+.container-login{
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+}
+
+.container-login .container{
     display: flex;
     width: 100%;
     height: 100vh;
-}
-
-.container-left{
-    width: 65%;
-    height: 100%;
-    display: flex;
     justify-content: center;
-    position: relative;
+    gap: 5%;
 }
 
-.container-right{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 35%;
-}
-
-.login-container{
-    background-color: white;
-    width: 510px;
-    padding: 20px;
-    border-radius: 4px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    box-shadow: 0 1px 4px rgb(0 0 0 / 5%), 0 4px 16px rgb(0 0 0 / 6%);
-}
-
-.title{
+.container-login .container .title{
     font-size: 1.5rem;
     text-align: center;
 }
@@ -130,6 +116,26 @@
     color: white;
 }
 
+.login-container{
+    background-color: white;
+    width: 510px;
+    height: 350px;
+    padding: 40px;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container-login .container .image-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+}
+
 .desc{
     font-size: 1.5rem;
     text-align: center;
@@ -137,7 +143,7 @@
     color: #717171;
 }
 
-.container .container-left .banner{
+.container .image-left .banner{
     margin: auto;
     height: 600px;
     width: auto;
@@ -145,12 +151,132 @@
     z-index: 2;
 }
 
-@media only screen and (max-width: 1040px){
-    .container-left{
-        display: none;
-        width: 0%;
+.container .login-right{
+    display: flex;
+    align-items: center;
+}
+
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+    
+    .container-login .container .login-right{
+        display: flex;
     }
-    .container-right{
+    
+  }
+  
+  /* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+  
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    .container-login .container .login-right{
+        display: flex;
+    }
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .container-login .container .image-left {
+        display: none;
+    }
+
+    .container .login-right{
         width: 100%;
     }
-}
+  }
+  
+  /* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+  
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .container-login .container .image-left{
+        display: none;
+    }
+
+    .container .login-right{
+        width: 100%;
+    }
+
+    .rounded-background {
+        background-color: var(--color);
+        position: absolute;
+        display: flex;
+        border-radius: 50%;
+        height: 100vh;
+        transform: translate(-50%, -50%);
+        top: -20%;
+        left: 50%;
+        width: 100vh;
+        opacity: 20%;
+        z-index: 1;
+    }
+  }
+  
+  /* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+  
+  @media (min-width: 481px) and (max-width: 767px) {
+    .container-login .container .image-left{
+        display: none;
+    }
+
+    .container .login-right{
+        width: 100%;
+    }
+
+    .rounded-background {
+        background-color: var(--color);
+        position: absolute;
+        display: flex;
+        border-radius: 50%;
+        height: 100vh;
+        transform: translate(-50%, -50%);
+        top: -20%;
+        left: 50%;
+        width: 100vh;
+        opacity: 20%;
+    }
+  }
+  
+  /* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+    .container .login-right{
+        display: none;
+    }
+
+    .container .login-right{
+        width: 100%;
+    }
+
+    .rounded-background {
+        background-color: var(--color);
+        position: absolute;
+        display: flex;
+        border-radius: 50%;
+        height: 100vh;
+        transform: translate(-50%, -50%);
+        top: -20%;
+        left: 50%;
+        width: 100vh;
+        opacity: 20%;
+        z-index: 1;
+    }
+  }
