@@ -1,5 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 import { FaStar } from 'react-icons/fa';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { Link, NavigateFunction, useNavigate } from "react-router-dom";
 import { RestaurantInterface, UserInfoInterface } from '../../constants/Interfaces';
 
@@ -22,15 +23,15 @@ function ShopCard(props: RestaurantModelInterface) {
         }
       }, [loading])
 
-    let price = props.data.delivery_price == 0 ? 
-            <div className='time'>30-40 min • <div className='free'>Grátis</div></div> : 
-    <div className='time'>30-40 min • {props.data.fee.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>;
+    let price = props.data.delivery_info.fee == 0 ? 
+            <div className='time'>{props.data.delivery_info.timeMinMinutes}-{props.data.delivery_info.timeMaxMinutes} min • <div className='free'>Grátis</div></div> : 
+    <div className='time'>{props.data.delivery_info.timeMinMinutes}-{props.data.delivery_info.timeMaxMinutes} min • {props.data.delivery_info.fee.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</div>;
 
     return (
             <Link to={`/restaurante/${props.data.id}`}>
                  <div className="card" key={props.data.id} >
                     <div className="image">
-                        <img src={props.data.logo} alt="" />
+                        <LazyLoadImage src={props.data.logo} alt="" />
                     </div>
 
                     <div className="content">
@@ -38,7 +39,7 @@ function ShopCard(props: RestaurantModelInterface) {
                         <div className="info">
                             <div className="rate">
                                 <FaStar/>
-                                <div className='rate-value'>Novo</div>
+                                <div className='rate-value'>{props.data.isNew ? 'Novo' : props.data.rate.toFixed(1)}</div>
                             </div>
                             <div className="description">
                                 <div>• {props.data.category} • {props.data.distance} km</div>

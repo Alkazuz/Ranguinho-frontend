@@ -7,6 +7,7 @@ import './index.css'
 import { AddressComponent } from '../AddressComponent';
 import { signOut, User } from 'firebase/auth';
 import { UserInfoInterface } from '../../constants/Interfaces';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 interface NavbarInterface{
     user?: UserInfoInterface,
@@ -26,7 +27,7 @@ function NavbarComponentMobile(props: NavbarInterface){
             <div className="nav-header-mobile">
                 <div className="navbar-mobile">
                     <div className="navs">
-                        <a href='/'><img src="/images/logo.webp" alt="" /></a>
+                        <a href='/'><LazyLoadImage src="/images/logo.webp" alt="" /></a>
                         <AddressComponent user={props.user}/>
                     </div>
                 </div>

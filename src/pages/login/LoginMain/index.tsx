@@ -1,5 +1,6 @@
 import { FacebookAuthProvider, getAuth, GoogleAuthProvider, signInWithPopup, signInWithRedirect } from 'firebase/auth';
 import type { FC, ReactNode } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
 import { ErrorBox } from '../../../components/ErrorBox';
@@ -55,7 +56,7 @@ export class Class extends LoginPageClass{
       <div className="container">
           <div className="container-left">
             
-            <img src="images/banner-login.png" alt="" className="banner" />
+            <LazyLoadImage src="images/banner-login.png" alt="" className="banner" />
             <div className="rounded-background"></div>
           </div>
           <div className="container-right">

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, NavigateFunction, useLocation, useNavigate } from 'react-router-dom';
-import GoogleSuggest from '../GoogleSuggest';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import Searchbar from '../Searchbar';
 
 import { auth } from '../../utils/firebase';
@@ -9,6 +9,7 @@ import './index.css'
 import { AddressComponent } from '../AddressComponent';
 import { signOut, User } from 'firebase/auth';
 import { UserInfoInterface } from '../../constants/Interfaces';
+
 
 interface NavbarInterface{
     user?: UserInfoInterface,
@@ -31,7 +32,7 @@ function NavbarComponent(props: NavbarInterface){
         <div className="nav-header">
             <div className="navbar">
                 <div className="navs">
-                    <a href='/'><img src="/images/logo.webp" alt="" /></a>
+                    <a href='/'><LazyLoadImage src="/images/logo.webp" alt="" /></a>
                     <ul>
                         <li>{inicio}</li>
                         <li>{restaurant}</li>

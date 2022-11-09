@@ -1,5 +1,6 @@
 import { FC, ReactNode, useEffect, useState } from 'react'
 import { FaStar } from 'react-icons/fa';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useNavigate, useParams } from 'react-router-dom';
 import NavbarComponent from '../../components/NavbarComponentDesktop';
 import NavbarComponentMobile from '../../components/NavbarComponentMobile';
@@ -49,7 +50,7 @@ export class Class extends BasePage{
                   </div>
                   <div className="restaurant-info">
                     <div className="logo">
-                        <img src={this.state.data.logo} alt="" className="restaurant-logo" />
+                        <LazyLoadImage src={this.state.data.logo} alt="" className="restaurant-logo" />
                     </div>
                     <div className="displayname">
                       <h1>{this.state.data.name}</h1>

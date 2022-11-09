@@ -1,4 +1,5 @@
 import type { FC, ReactNode } from 'react'
+import { LazyLoadImage } from 'react-lazy-load-image-component'
 import { useNavigate } from 'react-router'
 import NavbarComponent from '../../components/NavbarComponentDesktop'
 import NavbarComponentMobile from '../../components/NavbarComponentMobile'
@@ -17,7 +18,7 @@ export class Class extends BasePage{
 
   render(): ReactNode {
 
-    if(auth.currentUser && !this.state.userInfo.address){
+    if(auth.currentUser && this.state.userInfo && !this.state.userInfo.address){
       return (<AddressInput user={this.state.userInfo} />)
     }
 

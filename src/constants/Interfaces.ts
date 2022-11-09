@@ -4,13 +4,22 @@ export interface RestaurantInterface{
     name: string,
     id: string,
     category: string,
-    delivery_price: number,
+    isNew: boolean,
+    delivery_info: DeliveryInfo,
+    rate: number,
     long: number,
     lat: number,
     logo: string,
     geohash: string,
     fee: number,
     distance: number
+}
+
+interface DeliveryInfo{
+    type: string,
+    timeMinMinutes: number,
+    timeMaxMinutes: number,
+    fee: number
 }
 
 export interface UserInfoInterface{

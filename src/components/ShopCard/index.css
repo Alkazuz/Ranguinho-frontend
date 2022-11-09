@@ -27,7 +27,7 @@
     color: var(--p-color-2);
 }
 
-img{
+.card .image img{
     height: 100px;
     width: 100px;
     border-radius: 8px;

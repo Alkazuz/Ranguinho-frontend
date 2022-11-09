@@ -17,17 +17,17 @@ interface ShopInterface{
 function ShopList(props: ShopInterface){
 
     const [loading, setLoading] = useState(true);
-    const [data, setData] = useState([])
+    const [data, setData] = useState(null)
     const [page, setPage] = useState(0)
 
     let consultaAPI = async () => {
-      setLoading(false)      
+          
 
       if(props.user.address && props.user.lat && props.user.long){
           await api.get(`/restaurant/list?lat=${props.user.lat}&lng=${props.user.long}&page=${page}`)
           .then(response => {
             setData(response.data)
-            
+            setLoading(false)  
           })
       }else{
         await api.get(`/restaurant/list?page=${page}`)
@@ -41,7 +41,7 @@ function ShopList(props: ShopInterface){
 
     useEffect(() => {
     
-        if (loading && auth.currentUser) {
+        if (loading && auth.currentUser && props.user) {
           
           onSnapshot(doc(db, "users", auth.currentUser?.uid), (doc) => {
             consultaAPI();
@@ -51,7 +51,7 @@ function ShopList(props: ShopInterface){
       })
 
 
-    if(loading){
+    if(loading && !data){
       return (
         <div>
             <h1>Lojas</h1>
