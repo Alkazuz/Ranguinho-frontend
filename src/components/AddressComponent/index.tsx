@@ -31,7 +31,6 @@ export class AddressComponent extends Component<AddressInterface>{
             locked: true,
         }
     }
-
     
     render(): React.ReactNode {
 
@@ -52,11 +51,16 @@ export class AddressComponent extends Component<AddressInterface>{
         }
 
         const onSaveLocation = async () => {
-            const data = this.props.user;
+            let data = this.props.user;
             const loc = JSON.parse(JSON.stringify(this.state.location));
-            data.address = loc.formatted_address;
-            data.lat = loc.geometry.location.lat;
-            data.long = loc.geometry.location.lng;
+            if(!data)
+             data = {address: loc.formatted_address, lat: loc.geometry.location.lat, long: loc.geometry.location.lng}
+            else{
+                data.address = loc.formatted_address;
+                data.lat = loc.geometry.location.lat;
+                data.long = loc.geometry.location.lng;
+            }
+            
             let userid = auth.currentUser?.uid
             const docRef = doc(db, 'users', userid)
             await setDoc(docRef, data, { merge: true })

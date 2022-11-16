@@ -1,7 +1,7 @@
 import './index.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import Welcome from './pages/welcome'
+import Inicio from './pages/inicio'
 import Restaurante from './pages/restaurante'
 import PhoneLogin from './pages/login/PhoneLogin'
 import EmailLogin from './pages/login/EmailLogin'
@@ -14,8 +14,8 @@ function App() {
     
     <Router>
       <Routes>
-        <Route path='/' element={<Welcome />} />
-        <Route path='/inicio' element={<Welcome />} />
+        <Route path='/' element={<Inicio />} />
+        <Route path='/inicio' element={<Inicio />} />
 
         <Route path='/restaurante/:id' element={<Restaurante />} />
         <Route path='/restaurantes' element={<Restaurantes />} />

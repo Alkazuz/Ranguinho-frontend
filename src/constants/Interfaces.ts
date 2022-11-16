@@ -3,7 +3,7 @@ import { NavigateFunction } from "react-router-dom"
 export interface RestaurantInterface{
     name: string,
     id: string,
-    category: string,
+    category: CategoryInterface,
     isNew: boolean,
     delivery_info: DeliveryInfo,
     rate: number,
@@ -13,6 +13,19 @@ export interface RestaurantInterface{
     geohash: string,
     fee: number,
     distance: number
+}
+
+export interface StartInterface{
+    restaurants: RestaurantInterface[],
+    categories: CategoryInterface[]
+}
+
+export interface CategoryInterface{
+    id: string,
+    name: string,
+    color: string,
+    image: string,
+    position: number
 }
 
 interface DeliveryInfo{

@@ -42,7 +42,7 @@ function ShopCard(props: RestaurantModelInterface) {
                                 <div className='rate-value'>{props.data.isNew ? 'Novo' : props.data.rate.toFixed(1)}</div>
                             </div>
                             <div className="description">
-                                <div>• {props.data.category} • {props.data.distance} km</div>
+                                <div>• {props.data.category.name} • {props.data.distance} km</div>
                                 
                             </div>
                         </div>

@@ -3,10 +3,9 @@ import React, { Component, useEffect, useState } from 'react';
 
 import { auth, db } from '../../utils/firebase';
 
-import api from '../../services/api';
 import { User } from 'firebase/auth';
-import { collection, doc, getDoc, getDocFromCache } from 'firebase/firestore';
-import { PropPage, UserInfoInterface } from '../../constants/Interfaces';
+import { doc, getDoc } from 'firebase/firestore';
+import { PropPage } from '../../constants/Interfaces';
 
 export class BasePage extends Component<PropPage>{
 
@@ -19,11 +18,10 @@ export class BasePage extends Component<PropPage>{
     }
 
     signOut(): void{
-        console.log('deslogado')
     }
 
-    onLoggedIn(userInfo: any): void{
-        this.setState({userInfo: userInfo});
+    onLoggedIn(user: any): void{
+        this.setState({userInfo: user});
     }
 
     componentDidMount(): void {

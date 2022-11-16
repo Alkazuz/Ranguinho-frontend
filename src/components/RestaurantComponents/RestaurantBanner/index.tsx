@@ -14,7 +14,7 @@ function RestaurantBanner(props: RestaInterface) {
 
     return (
         <div className="restaurant-banner">
-            <LazyLoadImage src="https://static-images.ifood.com.br/image/upload//capa/d9b67baf-00e6-420e-be53-f85671775248/202205041526_KxVR_i@2x.jpg" alt="" />
+            <LazyLoadImage src={props.banner_url} alt="" />
         </div>
     );
 }

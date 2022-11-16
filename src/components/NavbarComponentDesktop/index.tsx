@@ -24,10 +24,10 @@ function NavbarComponent(props: NavbarInterface){
     let restaurant = location.includes("/restaurante") ? <Link className='selected' to="/restaurantes">Restaurantes</Link> : <Link to="/restaurantes">Restaurantes</Link>
 
     const onLogout = async () => {
-        console.log('deslogou')
-        const data = await signOut(auth);
+        await signOut(auth);
         props.onSignOut;
     }
+
     return (
         <div className="nav-header">
             <div className="navbar">

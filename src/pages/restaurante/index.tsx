@@ -36,6 +36,11 @@ export class Class extends BasePage{
     this.consultarApi(userInfo);
   }
 
+  componentDidMount(): void {
+    super.componentDidMount()
+  }
+
+
   render(): ReactNode {
     if(this.state.loading) return <></> ;
     else{
@@ -46,7 +51,7 @@ export class Class extends BasePage{
           <div className="content-restaurant box-div" style={{width: '1000px'}}>
               <div className="restaurant-content">
                   <div className="banner">
-                      <RestaurantBanner banner_url={this.state.data.logo} />
+                      <RestaurantBanner banner_url={this.state.data.bannerUrl} />
                   </div>
                   <div className="restaurant-info">
                     <div className="logo">
