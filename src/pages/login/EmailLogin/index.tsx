@@ -67,7 +67,7 @@ export class Class extends LoginPageClass{
 
     return (
 
-      <div className="container-login">
+      <div className="container-login" style={{overflowY: 'hidden'}}>
           
           <div className="container">
           <div className="rounded-background"></div>

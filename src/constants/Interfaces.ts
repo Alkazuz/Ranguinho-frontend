@@ -28,6 +28,16 @@ export interface CategoryInterface{
     position: number
 }
 
+export interface CardProductInterface{
+    id: string,
+    name: string,
+    image: string,
+    category: string,
+    description: string,
+    price: number,
+    
+}
+
 export interface CardbannerInterface{
     id: string,
     image: string,

@@ -1,11 +1,12 @@
 import { FC, ReactNode, useEffect, useState } from 'react'
-import { FaStar } from 'react-icons/fa';
+import { FaSearch, FaStar } from 'react-icons/fa';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useNavigate, useParams } from 'react-router-dom';
+import { CardProduct } from '../../components/CardProduct';
 import NavbarComponent from '../../components/NavbarComponentDesktop';
 import NavbarComponentMobile from '../../components/NavbarComponentMobile';
 import RestaurantBanner from '../../components/RestaurantComponents/RestaurantBanner';
-import { RestaurantInterface } from '../../constants/Interfaces';
+import { CardProductInterface, RestaurantInterface } from '../../constants/Interfaces';
 import api from '../../services/api';
 import { BasePage } from '../BasePage';
 
@@ -17,7 +18,8 @@ export class Class extends BasePage{
     super(props);
     this.state = {
       loading: true,
-      data: undefined
+      data: undefined,
+      filter: ''
     }
   }
 
@@ -43,6 +45,32 @@ export class Class extends BasePage{
 
 
   render(): ReactNode {
+
+    const handleChangeFilter = (filter: string): void =>{
+      this.setState({
+        filter
+      })
+    }
+
+    const productList = () => {
+      if(this.state.filter){
+        return (
+          <div className="products-list">
+            {this.state.data && this.state.data.products.filter((product: CardProductInterface) => 
+              product.name.toLowerCase().includes(this.state.filter.toLowerCase()) ||
+              product.description.toLowerCase().includes(this.state.filter.toLowerCase())
+            ).map((product: CardProductInterface) => <CardProduct product={product} />) }
+          </div>
+        )
+      }
+
+      return (
+        <div className="products-list">
+          {this.state.data && this.state.data.products.map((product: CardProductInterface) => <CardProduct product={product} />) }
+        </div>
+      )
+    }
+
     if(this.state.loading) return <></> ;
     
     else{
@@ -68,7 +96,22 @@ export class Class extends BasePage{
                             <div className='rate-value'>Novo</div></div>
                       </div>
                     </div>
-                    
+
+                    <div className="search-item">
+                        <div className="search-input-item">
+                          <div className="lupa">
+                              <FaSearch />
+                          </div>
+                          <div className="input-text">
+                              <input type="text" id="search" placeholder="Busque no cardápio"
+                              autoComplete='off'
+                              name="search" 
+                              onChange={(e) => handleChangeFilter(e.target.value) }
+                              />
+                          </div>
+                      </div>
+                    </div>
+                    {productList()}
                 </div>
             </div>
           </div>

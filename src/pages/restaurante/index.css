@@ -1,6 +1,63 @@
+.restaurant-content .search-item .search-input-item{
+    background-color: #ffff;
+    border: 1px solid var(--border-color);
+    width: 60%;
+    display: flex;
+    align-items: center;
+    height: 62px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+}
+
+.restaurant-content .search-item {
+    margin: 40px 0 0 0;
+}
+
+.restaurant-content .search-item .search-input-item .lupa{
+    width: 65px;
+    height: 35px;
+    color: var(--color);;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.restaurant-content .search-item .search-input-item .input-text{
+    font-size: 24px;
+    width: 100%;
+}
+
+.restaurant-content .search-item .search-input-item input{
+    display: flex;
+    height: 30px;
+    padding-right: 0;
+    line-height: 1.25em;
+    font-weight: 300;
+    border-radius: 8px;
+    width: 90%;
+    background: transparent;
+    border-color: transparent;
+    border: none;
+    color: var(--p-color);
+}
+
+.restaurant-content .search-item .search-input-item input:focus{
+    outline: none !important;
+    border:0px solid transparent;
+    color: #213547
+}
+
 .content-restaurant {
     width: auto;
     margin: 0 auto;
+}
+
+.restaurant-content .products-list{
+    margin: 40px 0 20px 0;
+    display: flex;
+    flex-direction: row;
+    gap: 20px
 }
 
 .content-restaurant .restaurant-content{
