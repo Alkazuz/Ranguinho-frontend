@@ -28,6 +28,6 @@ Ranguinho é um pequeno projeto baseado no iFood para delivery de comida, utiliz
 
 ![Login](https://i.imgur.com/Ok8J2rH.png)
 
-![Restaurantes](https://i.imgur.com/sGip9IF.png)
-
+![Inicio](https://i.imgur.com/Zqvd5mo.png)
+![Restaurante](https://i.imgur.com/7SJJceW.png)
 ![Localização](https://i.imgur.com/7iqMNOr.png)
