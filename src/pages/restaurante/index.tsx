@@ -51,25 +51,28 @@ export class Class extends BasePage{
         <>
           <NavbarComponent user={this.state.userInfo} onSignOut={this.signOut}/>
           <NavbarComponentMobile user={this.state.userInfo} onSignOut={this.signOut}/>
-          <div className="content-restaurant box-div" style={{width: '1000px'}}>
-              <div className="restaurant-content">
-                  <div className="banner">
-                      <RestaurantBanner banner_url={this.state.data.bannerUrl} />
-                  </div>
-                  <div className="restaurant-info">
-                    <div className="logo">
-                        <LazyLoadImage src={this.state.data.logo} alt="" className="restaurant-logo" />
+          <div className="content">
+            <div className="content-restaurant box-div">
+                <div className="restaurant-content">
+                    <div className="banner">
+                        <RestaurantBanner banner_url={this.state.data.bannerUrl} />
                     </div>
-                    <div className="displayname">
-                      <h1>{this.state.data.name}</h1>
-                      <div className="rate">
-                          <FaStar/>
-                          <div className='rate-value'>Novo</div></div>
+                    <div className="restaurant-info">
+                      <div className="logo">
+                          <LazyLoadImage src={this.state.data.logo} alt="" className="restaurant-logo" />
+                      </div>
+                      <div className="displayname">
+                        <h1>{this.state.data.name}</h1>
+                        <div className="rate">
+                            <FaStar/>
+                            <div className='rate-value'>Novo</div></div>
+                      </div>
                     </div>
-                  </div>
-                  
-              </div>
+                    
+                </div>
+            </div>
           </div>
+          
         </>
       )
     }

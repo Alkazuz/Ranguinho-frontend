@@ -9,7 +9,7 @@ interface CardListInterface{
 export function CardBannerList(props: CardListInterface){
     return (
         <div className="card-banner-list">
-            {props.cards && props.cards.map((card: CardbannerInterface) => <CardBanner card={card}/>)}
+            {props.cards && props.cards.map((card: CardbannerInterface) => <CardBanner key={card.id} card={card}/>)}
         </div>
         
     );

@@ -1,5 +1,5 @@
 .restaurant-banner{
-    width: 1000px;
+    width: 100%;
     display: inline-flex;
     height: 250px;
     justify-content: center;
@@ -7,8 +7,8 @@
 }
 
 .restaurant-banner img {
-    width: auto;
-    height: 100%;
+    width: 100%;
+    height: auto;
     border-radius: 0px;
-    filter: brightness(50%)
+    filter: brightness(50%);
   }
