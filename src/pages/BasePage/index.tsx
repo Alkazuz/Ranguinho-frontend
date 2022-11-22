@@ -35,13 +35,11 @@ export class BasePage extends Component<PropPage>{
                     if(data.lat && data.long && data.address) {
                         this.setState({userInfo: data});
                         this.onLoggedIn(data);
-                    }else{
-                      this.props.navigate('/address')
                     }
                     
-                }else{
-                    this.props.navigate('/address')
                 }
+            }else{
+                this.props.navigate('/login')
             }
         });
     }

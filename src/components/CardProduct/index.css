@@ -22,7 +22,6 @@
     font-weight: 400;
     font-size: 1.125rem;
     line-height: 1.5rem;
-    font-family: helvetica,sans-serif;
     
     overflow: hidden;
 }
@@ -31,7 +30,6 @@
     font-size: .875rem;
     line-height: 1.25rem;
     font-weight: 100;
-    font-family: helvetica,sans-serif;
     overflow: hidden;
     
 }
@@ -39,7 +37,6 @@
 .card-product .card-product-content h3{
     font-size: .975rem;
     font-weight: 450;
-    font-family: helvetica,sans-serif;
 }
 
 .card-product .card-product-image{

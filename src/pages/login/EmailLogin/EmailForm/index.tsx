@@ -35,7 +35,7 @@ export default function EmailForm(props: EmailFormProp) {
       {errors?.email?.type === "pattern" && (
         <p>Digite um email válido</p>
       )}
-      <input value="Continuar" type="submit" disabled={(errors?.email?.type != undefined)} className="btn-ranguinho width-100 height-50"/>
+      <input value="Continuar" autoComplete="off" type="submit" disabled={(errors?.email?.type != undefined)} className="btn-ranguinho width-100 height-50"/>
     </form>
   );
 }

@@ -89,11 +89,11 @@ export class Class extends BasePage{
                       <div className="logo">
                           <LazyLoadImage src={this.state.data.logo} alt="" className="restaurant-logo" />
                       </div>
-                      <div className="displayname">
+                      <div className="displayname font-fsp">
                         <h1>{this.state.data.name}</h1>
                         <div className="rate">
                             <FaStar/>
-                            <div className='rate-value'>Novo</div></div>
+                            <div className='rate-value font-figerona'>Novo</div></div>
                       </div>
                     </div>
 

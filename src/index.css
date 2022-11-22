@@ -1,3 +1,7 @@
+@font-face { font-family: 'Previa-Bold'; src: url('/fonts/Previa-Bold.ttf'); } 
+@font-face { font-family: 'Figerona'; src: url('/fonts/FontsFree-Net-Figerona-Bold.ttf'); } 
+@font-face { font-family: 'FSP'; src: url('/fonts/Fontspring-DEMO-nordeco-bold.ttf'); } 
+@font-face { font-family: 'MADETOMMY'; src: url('/fonts/MADE TOMMY.otf'); } 
 :root {
   
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
@@ -20,6 +24,28 @@
   --border-color: #dddddc;
   --gray: #f7f7f7;
   --red-error: #ee4c58;
+}
+
+::selection {
+  background-color: var(--color);
+  color: var(--gray);
+}
+
+.font-text{
+  font-family: 'MADETOMMY', sans-serif;
+
+}
+
+.font-fsp{
+  font-family: 'FSP', 'sans-serif';
+}
+
+.font-figerona{
+  font-family: 'Figerona', 'sans-serif';
+}
+
+.font-previa{
+  font-family: 'Previa-Bold', 'sans-serif';
 }
 
 .width-100{
