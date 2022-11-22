@@ -3,11 +3,10 @@
     width: 630px;
     height: 300px;
     position: relative;
-    
 }
 
 .card-banner .card-banner-content img{
     width: 100%;
-    height: auto;
+    height: 300px;
     border-radius: 8px;
 }

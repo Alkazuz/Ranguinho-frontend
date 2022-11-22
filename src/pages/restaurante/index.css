@@ -1,7 +1,20 @@
-.restaurant-content .search-item .search-input-item{
+.restaurant-content .restaurant-menu .delivery-info{
     background-color: #ffff;
     border: 1px solid var(--border-color);
-    width: 60%;
+    width: 15%;
+    display: flex;
+    align-items: center;
+    height: 62px;
+    border-radius: 5px;
+    display: flex;
+    margin: 40px 0 0 0;
+    flex-direction: row;
+}
+
+.restaurant-content .restaurant-menu .search-item .search-input-item{
+    background-color: #ffff;
+    border: 1px solid var(--border-color);
+    width: 100%;
     display: flex;
     align-items: center;
     height: 62px;
@@ -10,11 +23,12 @@
     flex-direction: row;
 }
 
-.restaurant-content .search-item {
+.restaurant-content .restaurant-menu .search-item {
     margin: 40px 0 0 0;
+    width: 80%;
 }
 
-.restaurant-content .search-item .search-input-item .lupa{
+.restaurant-content .restaurant-menu .search-item .search-input-item .lupa{
     width: 65px;
     height: 35px;
     color: var(--color);;
@@ -23,12 +37,18 @@
     justify-content: center;
 }
 
-.restaurant-content .search-item .search-input-item .input-text{
+.restaurant-content .restaurant-menu{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.restaurant-content .restaurant-menu .search-item .search-input-item .input-text{
     font-size: 24px;
     width: 100%;
 }
 
-.restaurant-content .search-item .search-input-item input{
+.restaurant-content .restaurant-menu .search-item .search-input-item input{
     display: flex;
     height: 30px;
     padding-right: 0;

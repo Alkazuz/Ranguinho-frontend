@@ -96,21 +96,28 @@ export class Class extends BasePage{
                             <div className='rate-value font-figerona'>Novo</div></div>
                       </div>
                     </div>
-
-                    <div className="search-item">
-                        <div className="search-input-item">
-                          <div className="lupa">
-                              <FaSearch />
-                          </div>
-                          <div className="input-text">
-                              <input type="text" id="search" placeholder="Busque no cardápio"
-                              autoComplete='off'
-                              name="search" 
-                              onChange={(e) => handleChangeFilter(e.target.value) }
-                              />
-                          </div>
+                    <div className="restaurant-menu">
+                      <div className="search-item">
+                          <div className="search-input-item">
+                            <div className="lupa">
+                                <FaSearch />
+                            </div>
+                            <div className="input-text">
+                                <input type="text" id="search" placeholder="Busque no cardápio"
+                                autoComplete='off'
+                                name="search" 
+                                onChange={(e) => handleChangeFilter(e.target.value) }
+                                />
+                            </div>
+                        </div>
                       </div>
+
+                      <div className="delivery-info">
+                        
+                      </div>
+
                     </div>
+                    
                     {productList()}
                 </div>
             </div>
