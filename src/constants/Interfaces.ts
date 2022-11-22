@@ -17,7 +17,7 @@ export interface RestaurantInterface{
 
 export interface StartInterface{
     restaurants: RestaurantInterface[],
-    categories: CategoryInterface[]
+    categories: CategoryInterface[],
 }
 
 export interface CategoryInterface{
@@ -26,6 +26,12 @@ export interface CategoryInterface{
     color: string,
     image: string,
     position: number
+}
+
+export interface CardbannerInterface{
+    id: string,
+    image: string,
+    link: string
 }
 
 interface DeliveryInfo{

@@ -11,6 +11,7 @@ import LogoBanner from '../../../../public/images/banner-login.png'
 import "./index.css"
 import EmailForm from './EmailForm';
 import PasswordForm from './PasswordForm';
+import { ErrorBox } from '../../../components/ErrorBox';
 const auth = getAuth();
 export class Class extends LoginPageClass{
   
@@ -82,7 +83,7 @@ export class Class extends LoginPageClass{
                 <div className="login-sub-container">
                   {this.state.step == 0 && <><h1 className="title-email">Informe o seu e-mail para continuar</h1><EmailForm onReceiveEmail={onChangeEmail} /></>}
                   {this.state.step == 1 && <><h1 className="title-email">Informe a sua senha para continuar</h1><PasswordForm onReceivePassword={onChangePassword}/></>}
-                  
+                  {this.state.error && <ErrorBox msg={this.state.error} onClose={() => this.setState({error: ""})}/>}
                 </div>
                 </div>
             </div>

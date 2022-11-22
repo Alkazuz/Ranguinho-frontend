@@ -1,7 +1,8 @@
 import type { FC, ReactNode } from 'react'
+import React from 'react'
 import { LazyLoadImage } from 'react-lazy-load-image-component'
-import { useNavigate } from 'react-router'
-import { CardBannerList } from '../../components/CardBannerList'
+import { useLocation, useNavigate } from 'react-router'
+import queryString from 'query-string'
 import { CategoryList } from '../../components/CategoryList'
 import NavbarComponent from '../../components/NavbarComponentDesktop'
 import NavbarComponentMobile from '../../components/NavbarComponentMobile'
@@ -19,7 +20,8 @@ export class Class extends BasePage{
     super(props);
     this.state = {
         userInfo: undefined,
-        data: undefined
+        data: undefined,
+        query: undefined
     }
   }
 
@@ -32,6 +34,9 @@ export class Class extends BasePage{
 
   componentDidMount(): void {
     super.componentDidMount()
+    const values = queryString.parse(this.props.params.search)
+    this.setState({query: values})
+    console.log(values)
   }
 
   render(): ReactNode {
@@ -47,18 +52,19 @@ export class Class extends BasePage{
         
         <div className="content">
           {this.state.data && <CategoryList restaurants={this.state.data.restaurants} categories={this.state.data.categories} />}
-          {this.state.data && <CardBannerList cards={this.state.data.banners}/>}
-          <ShopList user={this.state.userInfo} navigate={this.props.navigate}/>
+          {this.state.query && <ShopList user={this.state.userInfo} navigate={this.props.navigate} category={this.state.query.category} />}
+          
         </div>
       </>)
 
   }
 }
 
-function Inicio() {
+function Buscar() {
   let navigate = useNavigate();
-  return <Class navigate={navigate} />
+  const query = useLocation();
+  return <Class navigate={navigate} params={query}/>
 }
 
-export default Inicio
+export default Buscar
 

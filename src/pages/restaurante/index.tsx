@@ -38,12 +38,15 @@ export class Class extends BasePage{
 
   componentDidMount(): void {
     super.componentDidMount()
+    
   }
 
 
   render(): ReactNode {
     if(this.state.loading) return <></> ;
+    
     else{
+      document.title = `${this.state.data.name} - Ranguinho Delivery de Comida`;
       return (
         <>
           <NavbarComponent user={this.state.userInfo} onSignOut={this.signOut}/>

@@ -1,0 +1,13 @@
+
+.card-banner{
+    width: 630px;
+    height: 300px;
+    position: relative;
+    
+}
+
+.card-banner .card-banner-content img{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

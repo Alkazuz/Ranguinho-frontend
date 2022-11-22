@@ -7,6 +7,7 @@ import PhoneLogin from './pages/login/PhoneLogin'
 import EmailLogin from './pages/login/EmailLogin'
 import Restaurantes from './pages/restaurantes'
 import LoginMain from './pages/login/LoginMain'
+import Buscar from './pages/buscar'
 
 function App() {
 
@@ -16,7 +17,7 @@ function App() {
       <Routes>
         <Route path='/' element={<Inicio />} />
         <Route path='/inicio' element={<Inicio />} />
-
+        <Route path='/buscar' element={<Buscar />} />
         <Route path='/restaurante/:id' element={<Restaurante />} />
         <Route path='/restaurantes' element={<Restaurantes />} />
 

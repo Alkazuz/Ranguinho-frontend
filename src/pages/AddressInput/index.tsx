@@ -39,14 +39,20 @@ export class AddressInput extends Component<AddressInterface>{
         }
 
         const onSaveLocation = async () => {
-            const data = this.props.user;
+            let data = this.props.user;
             const loc = JSON.parse(JSON.stringify(this.state.location));
+            if(!data) data = {
+                address: '',
+                lat: 0,
+                long: 0
+            }
             data.address = loc.formatted_address;
             data.lat = loc.geometry.location.lat;
             data.long = loc.geometry.location.lng;
             let userid = auth.currentUser?.uid
             const docRef = doc(db, 'users', userid)
             await setDoc(docRef, data, { merge: true })
+            console.log(data)
             this.setState({open: false})
         }
 

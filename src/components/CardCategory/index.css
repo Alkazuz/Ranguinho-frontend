@@ -7,6 +7,14 @@
     position: relative;
 }
 
+.card-category .category-name {
+    position: absolute;
+    bottom: -7px;
+    font-weight: 300;
+    font-size: 16px;
+    color: var(--p-color);
+}
+
 .card-category .background{
     height: 50%;
     width: 100%;

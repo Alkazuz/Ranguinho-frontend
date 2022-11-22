@@ -11,7 +11,8 @@ import './index.css'
 
 interface ShopInterface{
   user: UserInfoInterface,
-  navigate:  NavigateFunction
+  navigate:  NavigateFunction,
+  category?: string
 }
 
 function ShopList(props: ShopInterface){
@@ -24,7 +25,7 @@ function ShopList(props: ShopInterface){
           
 
       if(props.user.address && props.user.lat && props.user.long){
-          await api.get(`/restaurant/list?lat=${props.user.lat}&lng=${props.user.long}&page=${page}`)
+          await api.get(`/restaurant/list?lat=${props.user.lat}&lng=${props.user.long}&page=${page}${props.category ? '&category=' + props.category : ''}`)
           .then(response => {
             setData(response.data)
             setLoading(false)  

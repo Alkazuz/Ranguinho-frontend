@@ -32,10 +32,16 @@ export class BasePage extends Component<PropPage>{
                 const docSnap  = await getDoc(usersRef);
                 if(docSnap.exists()){
                     const data = docSnap.data();
-                    this.onLoggedIn(data);
+                    if(data.lat && data.long && data.address) {
+                        this.setState({userInfo: data});
+                        this.onLoggedIn(data);
+                    }else{
+                      this.props.navigate('/address')
+                    }
+                    
+                }else{
+                    this.props.navigate('/address')
                 }
-            }else{
-                this.props.navigate('/login')
             }
         });
     }

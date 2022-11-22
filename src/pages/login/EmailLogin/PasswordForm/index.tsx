@@ -1,4 +1,5 @@
 
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 
 import "./index.css";
@@ -8,6 +9,9 @@ interface PasswordFormProp{
 }
 
 export default function PasswordForm(props: PasswordFormProp) {
+
+  const [loading, setLoading] = useState(false);
+
   const {
     register,
     handleSubmit,
@@ -15,13 +19,20 @@ export default function PasswordForm(props: PasswordFormProp) {
   } = useForm();
 
   const onSubmit = (data) => {
-    props.onReceivePassword(data.password)
+    try{
+      
+      setLoading(true)
+      props.onReceivePassword(data.password)
+    }catch(e){
+      setLoading(false);
+
+    }
   };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
         <div className="input-field">
-            <input type={'password'} className={`box-div${(errors?.password?.type ? ' error' : '')}`}
+            <input type={'password'} autoFocus className={`box-div${(errors?.password?.type ? ' error' : '')}`}
                 {...register("password", {
                 required: true,
                 })}
@@ -34,7 +45,7 @@ export default function PasswordForm(props: PasswordFormProp) {
       {errors?.password?.type === "pattern" && (
         <p>Digite uma senha válida</p>
       )}
-      <input value="Continuar" type="submit" disabled={(errors?.password?.type != undefined)} className="btn-ranguinho width-100 height-50"/>
+      <input value="Continuar" type="submit" disabled={(errors?.password?.type != undefined || loading)} className="btn-ranguinho width-100 height-50"/>
     </form>
   );
 }
