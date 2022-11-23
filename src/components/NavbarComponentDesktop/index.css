@@ -10,10 +10,67 @@
     color: var(--color);;
   }
 
+.profile{
+    fill: var(--color);
+    cursor: pointer;
+    margin-left: 20px;
+}
+
 .logout{
     fill: var(--color);
     cursor: pointer;
     margin-left: 20px;
+}
+
+li .profile-div{
+  width: 320px;
+  height: 500px;
+  position: absolute;
+  top: 50%;
+  background-color: #fff;
+  right: 19%;
+}
+
+li .profile-div .header{
+  padding: 20px;
+}
+
+li .profile-div .header h1{
+  font-size: 20px;
+}
+
+li .profile-div ul {
+  flex-flow: column;
+  overflow-y: hidden;
+}
+
+li .profile-div .nav-profile{
+  width: 100%;
+}
+
+li .profile-div ul li .item:hover svg,
+li .profile-div ul li .item:hover a{
+  color: var(--color)!important;
+  fill: var(--color);
+}
+
+
+li .profile-div .nav-profile ul{
+  padding: 0;
+  list-style-type: none;
+}
+li .profile-div ul li .item:hover{
+  cursor: pointer;
+}
+
+li .profile-div ul li .item{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 50px;
+  gap: 20px;
+  padding: 0 30px;
+  font-size: 1.125rem;
 }
 
 .navbar{
