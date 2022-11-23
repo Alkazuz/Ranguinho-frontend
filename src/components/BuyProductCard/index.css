@@ -99,14 +99,13 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 90%;
     margin: 20px 0 10px;
     background-color: #fff;
     border-color: var(--border-color);
     outline: none !important;
     color: var(--p-color);
     padding: 20px;
-    width: 412px;
     height: calc(4em + 40px);
     font-size: 1rem;
 }
