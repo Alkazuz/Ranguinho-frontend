@@ -4,9 +4,9 @@ import { User } from 'firebase/auth';
 
 import { NavigateFunction, useNavigate } from 'react-router-dom';
 import { auth } from "../../../utils/firebase";
-import { PropNagivation } from "../../../constants/Interfaces";
+import { PropPage } from "../../../constants/Interfaces";
 
-export class LoginPageClass extends Component<PropNagivation>{
+export class LoginPageClass extends Component<PropPage>{
 
     
     constructor(props) {

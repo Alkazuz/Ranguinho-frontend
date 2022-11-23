@@ -1,7 +1,10 @@
 export function handleFirebaseError(err) {
   let errorCode = err.code;
   let errorMessage = "Ocorreu um erro, tente novamente!";
-  if (errorCode == "auth/email-already-exists") {
+  console.log(errorCode)
+  if (errorCode == "auth/email-already-in-use") {
+    errorMessage = "O email informado já está registrado."
+  }else if (errorCode == "auth/email-already-exists") {
     errorMessage = "O email informado já está registrado."
   }else if (errorCode == "auth/invalid-password") {
     errorMessage = "A senha informada é inválida."

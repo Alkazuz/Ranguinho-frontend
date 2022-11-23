@@ -99,6 +99,10 @@ export class Class extends LoginPageClass{
                     
                   </div>
 
+                  <Link to={'/register'} className="font-text">
+                    Fazer registro
+                  </Link>
+
                   {errorMsg && <ErrorBox msg={errorMsg} onClose={() => this.setState({error: ''})}/>}
                 </div>
 

@@ -17,6 +17,7 @@ const analytics = getAnalytics();
 
 interface AddressInterface{
     user: UserInfoInterface
+    navigate: any
 }
 
 export class AddressInput extends Component<AddressInterface>{
@@ -52,8 +53,8 @@ export class AddressInput extends Component<AddressInterface>{
             let userid = auth.currentUser?.uid
             const docRef = doc(db, 'users', userid)
             await setDoc(docRef, data, { merge: true })
-            console.log(data)
             this.setState({open: false})
+            this.props.navigate('/')
         }
 
         

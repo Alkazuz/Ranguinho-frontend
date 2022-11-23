@@ -54,6 +54,14 @@
     height: 5px;
 }
 
+.container-login .container .login-right .login-container a{
+    font-size: 16px;
+    color: var(--p-color);
+}
+.container-login .container .login-right .login-container a:hover{
+    text-decoration: underline;
+}
+
 .container-login{
     width: 100%;
     height: 100vh;

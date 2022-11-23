@@ -36,7 +36,7 @@ export class Class extends BasePage{
 
   render(): ReactNode {
     if(auth.currentUser && (this.state.userInfo == undefined || !this.state.userInfo.address)){
-      return (<AddressInput user={this.state.userInfo} />)
+      return (<AddressInput user={this.state.userInfo} navigate={this.props.navigate} />)
     }
 
     return (
