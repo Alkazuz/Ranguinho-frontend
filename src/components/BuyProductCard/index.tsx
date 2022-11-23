@@ -15,7 +15,7 @@ interface CardBuyProp{
 }
 
 export function BuyProductCard(props: CardBuyProp){
-    const [count, setCount] = useState<Number>(1);
+    const [count, setCount] = useState<number>(1);
     const [description, setDescription] = useState<String>('');
     const wrapperRef = useRef(null);
 
@@ -56,7 +56,9 @@ export function BuyProductCard(props: CardBuyProp){
         })
       }
     
-
+    const price = () => {
+        return (props.product.price * count).toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+    }
     useOutsideAlerter(wrapperRef, props.onClose);
     return (
         <div id="drawer_overlay" style={{opacity: (props.product ? 1 : 0), display: (props.product ? 'block' : 'none')}}>
@@ -76,7 +78,7 @@ export function BuyProductCard(props: CardBuyProp){
                             <hr />
                             <div className="buy">
                                 <NumericInput value={1} minValue={1} maxValue={10} onChange={(value: number) => setCount(value)}></NumericInput>
-                                <button onClick={handleOnClickBuy} className="buy-btn">Comprar {props.product.price.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}</button>
+                                <button onClick={handleOnClickBuy} className="buy-btn">Comprar {price()}</button>
                             </div>
                         </div>
                     </div>

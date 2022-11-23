@@ -14,8 +14,8 @@ export function NumericInput(props: NumbericInputProp) {
 
     return(
         <div className="numberic-counter">
-            <button className="btn-numeric-icon" disabled={value == props.minValue} onClick={() => setValue(value - 1)}>-</button>
+            <button className="btn-numeric-icon" disabled={value == props.minValue} onClick={() => { setValue(value - 1); props.onChange(value - 1) }}>-</button>
             <div className="value">{value.toString()}</div>
-            <button className="btn-numeric-icon" disabled={value == props.maxValue} onClick={() => setValue(value + 1)}>+</button>
+            <button className="btn-numeric-icon" disabled={value == props.maxValue} onClick={() => { setValue(value + 1); props.onChange(value + 1) }}>+</button>
         </div>);
 }
