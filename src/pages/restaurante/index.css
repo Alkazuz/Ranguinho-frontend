@@ -2,13 +2,25 @@
     background-color: #ffff;
     border: 1px solid var(--border-color);
     width: 15%;
+    padding: 10px 10px;
     display: flex;
-    align-items: center;
     height: 62px;
     border-radius: 5px;
-    display: flex;
     margin: 40px 0 0 0;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.restaurant-menu .delivery-info .scheduling{
+    font-size: .975rem;
+    line-height: 1.125rem;
+    font-weight: 400;
+}
+
+.restaurant-menu .delivery-info .scheduling-info{
+    color: #717171;
+    font-size: .75rem;
+    padding: 0 2px 0 0;
+    font-weight: 300;
 }
 
 .restaurant-content .restaurant-menu .search-item .search-input-item{

@@ -70,8 +70,14 @@ export class Class extends BasePage{
         </div>
       )
     }
+    let price = '';
+    if(this.state.data)
+      price = this.state.data.delivery_info.fee == 0 ? 
+      `${this.state.data.delivery_info.timeMinMinutes}-${this.state.data.delivery_info.timeMaxMinutes} min • Grátis` : 
+      `${this.state.data.delivery_info.timeMinMinutes}-${this.state.data.delivery_info.timeMaxMinutes} min • ${this.state.data.delivery_info.fee.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`
 
-    if(this.state.loading) return <></> ;
+
+    if(this.state.loading || !this.state.data) return <></> ;
     
     else{
       document.title = `${this.state.data.name} - Ranguinho Delivery de Comida`;
@@ -112,8 +118,9 @@ export class Class extends BasePage{
                         </div>
                       </div>
 
-                      <div className="delivery-info">
-                        
+                      <div className="delivery-info box-div">
+                        <span className="scheduling">Hoje</span>
+                        <span className="scheduling-info">{price}</span>
                       </div>
 
                     </div>
