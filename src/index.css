@@ -36,6 +36,13 @@
 
 }
 
+hr{
+  box-sizing: content-box;
+  background: rgba(0,0,0,.05);
+  border: 0;
+  height: 1px;
+}
+
 .font-fsp{
   font-family: 'FSP', 'sans-serif';
 }
@@ -87,6 +94,21 @@
   transition-timing-function: ease;
   transition-delay: 0s;
   transition-property: all;
+}
+
+.drawner{
+  position: fixed;
+  z-index: 10001;
+  pointer-events: none;
+}
+
+.drawner .drawer__overlay {
+  pointer-events: all;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 .btn{

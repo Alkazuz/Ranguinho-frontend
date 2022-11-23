@@ -1,6 +1,6 @@
 .card-product{
     width: 600px;
-    height: 180px;
+    height: 200px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -22,15 +22,12 @@
     font-weight: 400;
     font-size: 1.125rem;
     line-height: 1.5rem;
-    
-    overflow: hidden;
 }
 
 .card-product .card-product-content h2{
     font-size: .875rem;
     line-height: 1.25rem;
     font-weight: 100;
-    overflow: hidden;
     
 }
 

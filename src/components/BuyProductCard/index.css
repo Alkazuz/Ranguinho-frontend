@@ -1,0 +1,117 @@
+#drawer_overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity .5s ease-in-out;
+    background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+    z-index: 99999;
+    cursor: auto;
+}
+
+#drawer_overlay .drawner_container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.card-product-buy{
+    position: relative;
+    width: 50%;
+    min-height: 430px;
+    height: auto;
+    transition: top .5s ease-out;
+    background-color: white;
+    z-index: 3;
+    border-radius: 4px;
+    cursor: auto;
+    padding: 10px;
+    top: 0px;
+}
+
+.card-product-buy .content-buy{
+    display: flex;
+    height: 100%;
+    width: 100%;;
+    flex-direction: row;
+}
+
+.card-product-buy .content-buy .product-image{
+    width: 50%;
+    padding: 20px;
+    height: auto;
+}
+
+.card-product-buy .content-buy .product-info{
+    width: 50%;
+    padding: 20px;
+    height: auto;
+}
+
+.card-product-buy .content-buy .product-info .name{
+    font-size: .75rem;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.card-product-buy .content-buy .product-info .description{
+    display: inline-block;
+    font-size: .875rem;
+    font-weight: 300;
+}
+
+.card-product-buy .content-buy .product-info .price{
+    font-size: .975rem;
+}
+
+.card-product-buy .content-buy .product-info .comment{
+    font-size: 1rem;
+    line-height: 20px;
+    font-weight: 600;
+}
+
+.card-product-buy .content-buy .product-info .buy{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.card-product-buy .content-buy .product-info .buy .buy-btn{
+    background-color: var(--color);
+    width: 200px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.card-product-buy .content-buy .product-info .textarea{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0 10px;
+    background-color: #fff;
+    border-color: var(--border-color);
+    outline: none !important;
+    color: var(--p-color);
+    padding: 20px;
+    width: 412px;
+    height: calc(4em + 40px);
+    font-size: 1rem;
+}
+
+.card-product-buy .content-buy .product-image img{
+    width: 100%;
+    height: auto;
+}

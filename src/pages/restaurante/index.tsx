@@ -2,7 +2,9 @@ import { FC, ReactNode, useEffect, useState } from 'react'
 import { FaSearch, FaStar } from 'react-icons/fa';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import { useNavigate, useParams } from 'react-router-dom';
+import { BuyProductCard } from '../../components/BuyProductCard';
 import { CardProduct } from '../../components/CardProduct';
+import { CartShopComponent } from '../../components/CartShopComponent';
 import NavbarComponent from '../../components/NavbarComponentDesktop';
 import NavbarComponentMobile from '../../components/NavbarComponentMobile';
 import RestaurantBanner from '../../components/RestaurantComponents/RestaurantBanner';
@@ -19,6 +21,7 @@ export class Class extends BasePage{
     this.state = {
       loading: true,
       data: undefined,
+      selectedProduct: undefined,
       filter: ''
     }
   }
@@ -59,14 +62,21 @@ export class Class extends BasePage{
             {this.state.data && this.state.data.products.filter((product: CardProductInterface) => 
               product.name.toLowerCase().includes(this.state.filter.toLowerCase()) ||
               product.description.toLowerCase().includes(this.state.filter.toLowerCase())
-            ).map((product: CardProductInterface) => <CardProduct product={product} />) }
+            ).map((product: CardProductInterface) => 
+            <div key={product.id} onClick={() => this.setState({selectedProduct: product})}>
+              <CardProduct product={product} />
+              </div>) }
           </div>
         )
       }
 
       return (
         <div className="products-list">
-          {this.state.data && this.state.data.products.map((product: CardProductInterface) => <CardProduct product={product} />) }
+          {this.state.data && this.state.data.products
+          .map((product: CardProductInterface) => 
+          <div key={product.id} onClick={() => this.setState({selectedProduct: product})}>
+            <CardProduct product={product} />
+          </div>) }
         </div>
       )
     }
@@ -75,7 +85,6 @@ export class Class extends BasePage{
       price = this.state.data.delivery_info.fee == 0 ? 
       `${this.state.data.delivery_info.timeMinMinutes}-${this.state.data.delivery_info.timeMaxMinutes} min • Grátis` : 
       `${this.state.data.delivery_info.timeMinMinutes}-${this.state.data.delivery_info.timeMaxMinutes} min • ${this.state.data.delivery_info.fee.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`
-
 
     if(this.state.loading || !this.state.data) return <></> ;
     
@@ -86,6 +95,7 @@ export class Class extends BasePage{
           <NavbarComponent user={this.state.userInfo} onSignOut={this.signOut}/>
           <NavbarComponentMobile user={this.state.userInfo} onSignOut={this.signOut}/>
           <div className="content">
+            
             <div className="content-restaurant box-div">
                 <div className="restaurant-content">
                     <div className="banner">
@@ -126,6 +136,7 @@ export class Class extends BasePage{
                     </div>
                     
                     {productList()}
+                    <BuyProductCard product={this.state.selectedProduct} restaurant={this.state.data} user={this.state.userInfo} onClose={() => this.setState({selectedProduct: undefined})}/>
                 </div>
             </div>
           </div>

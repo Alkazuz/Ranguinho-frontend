@@ -9,6 +9,7 @@ import Restaurantes from './pages/restaurantes'
 import LoginMain from './pages/login/LoginMain'
 import Buscar from './pages/buscar'
 import RegisterPage from './pages/register'
+import Pedidos from './pages/pedidos'
 
 function App() {
 
@@ -23,6 +24,8 @@ function App() {
         <Route path='/restaurantes' element={<Restaurantes />} />
 
         <Route path='/register' element={<RegisterPage />} />
+
+        <Route path='/pedidos' element={<Pedidos />} />
 
         <Route path='/login' element={<LoginMain />} />
         <Route path='/login/celular' element={<PhoneLogin />} />

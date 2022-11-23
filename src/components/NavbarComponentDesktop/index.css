@@ -11,9 +11,9 @@
   }
 
 .profile{
-    fill: var(--color);
     cursor: pointer;
     margin-left: 20px;
+    position: relative;
 }
 
 .logout{
@@ -28,11 +28,15 @@ li .profile-div{
   position: absolute;
   top: 50%;
   background-color: #fff;
-  right: 19%;
+  right: 100%;
 }
 
 li .profile-div .header{
   padding: 20px;
+}
+
+li .profile-div:hover{
+  cursor: default;
 }
 
 li .profile-div .header h1{

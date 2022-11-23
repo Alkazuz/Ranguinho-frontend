@@ -1,0 +1,39 @@
+.numberic-counter{
+    display: flex;
+    align-items: center;
+    border: solid 1px var(--border-color);
+    border-radius: 4px;
+}
+
+.numberic-counter .btn-numeric-icon {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: transparent!important;
+    color: var(--color);
+    background-color: #fff;
+}
+
+.numberic-counter.value{
+    display: flex;
+    justify-content: center;
+}
+
+.numberic-counter .btn-numeric-icon:disabled{
+    opacity: .4;
+}
+
+.numberic-counter .btn-numeric-icon:hover{
+    background-color: #fff;
+}
+
+.numberic-counter .value{
+    display: inline-block;
+    height: 30px;
+    min-width: 35px;
+    line-height: 34px;
+    text-align: center;
+    font-size: 1.125rem;
+    font-weight: 500;
+    margin: 3px 0;
+    font-weight: 500;
+}

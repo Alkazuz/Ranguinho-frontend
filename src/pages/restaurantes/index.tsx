@@ -9,7 +9,6 @@ import './index.css'
 export class Class extends BasePage{
   
   componentDidMount(): void {
-    console.log('aaa')
     super.componentDidMount()
   }
 
@@ -19,7 +18,7 @@ export class Class extends BasePage{
 
         <NavbarComponent user={this.state.userInfo}  onSignOut={this.signOut}/>
         <div className="content">
-          <ShopList />
+          <ShopList user={this.state.userInfo} navigate={this.state.navigate} />
         </div>
       </>)
 

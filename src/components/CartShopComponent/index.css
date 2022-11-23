@@ -1,0 +1,16 @@
+.drawner .drawner__overlay .drawner_cart{
+    padding: 0;
+}
+
+@media only screen and (min-width: 960px){
+    .drawner .drawner__overlay .drawner_cart .drawer__content {
+        width: 472px;
+        max-height: 100vh;
+        transform: translateX(100%);
+        border-radius: unset;
+        position: fixed;
+        left: unset;
+        height: calc(100vh - 80px);
+        padding: 15px 30px;
+    }
+}
