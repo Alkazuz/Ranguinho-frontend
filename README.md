@@ -33,7 +33,7 @@ Ranguinho é um pequeno projeto baseado no iFood para delivery de comida, utiliz
 - Login: Telas para o usuário fazer o login. A tela pergunta login com Google, Facebook, Telefone, Email-senha;
 - Login com email: Tela que permite o usuário logar com email e senha;
 - Registro (email/senha): Tela com os campos: nome e sobrenome, email, senha e um botão para confirmar;
-- <span style="color: red">*</span> Categoria: Usada para filtrar os restaurantes a partir de uma categoria selecionada;
+- `*`Categoria: Usada para filtrar os restaurantes a partir de uma categoria selecionada;
 - `*`Restaurate: Permite o usuário visualizar as informações, itens e realizar um pedido no restaurante
 
 ### Janelas
