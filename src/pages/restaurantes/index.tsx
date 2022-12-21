@@ -16,9 +16,9 @@ export class Class extends BasePage{
     return (
       <>
 
-        <NavbarComponent user={this.state.userInfo}  onSignOut={this.signOut}/>
+        <NavbarComponent user={(this.state as any).userInfo}  onSignOut={this.signOut}/>
         <div className="content">
-          <ShopList user={this.state.userInfo} navigate={this.state.navigate} />
+          <ShopList user={(this.state as any).userInfo} navigate={(this.state as any).navigate} />
         </div>
       </>)
 

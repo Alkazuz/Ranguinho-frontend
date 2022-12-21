@@ -24,7 +24,7 @@ export class AddressInput extends Component<AddressInterface>{
 
     constructor(props){
         super(props);
-        this.state= {
+        (this.state as any)= {
             open: false,
             location: undefined,
             streetNumber: '',
@@ -41,7 +41,7 @@ export class AddressInput extends Component<AddressInterface>{
 
         const onSaveLocation = async () => {
             let data = this.props.user;
-            const loc = JSON.parse(JSON.stringify(this.state.location));
+            const loc = JSON.parse(JSON.stringify((this.state as any).location));
             if(!data) data = {
                 address: '',
                 lat: 0,
@@ -51,10 +51,15 @@ export class AddressInput extends Component<AddressInterface>{
             data.lat = loc.geometry.location.lat;
             data.long = loc.geometry.location.lng;
             let userid = auth.currentUser?.uid
-            const docRef = doc(db, 'users', userid)
-            await setDoc(docRef, data, { merge: true })
-            this.setState({open: false})
-            this.props.navigate('/')
+
+            if(userid) {
+                const docRef = doc(db, 'users', userid)
+                await setDoc(docRef, data, { merge: true })
+                this.setState({open: false})
+                this.props.navigate('/')
+            }
+
+            
         }
 
         

@@ -17,7 +17,7 @@ export class Class extends BasePage{
 
   constructor(props){
     super(props);
-    this.state = {
+    (this.state as any) = {
       loading: true,
       data: undefined,
     }
@@ -46,7 +46,7 @@ export class Class extends BasePage{
 
   render(): ReactNode {
 
-    if(this.state.loading || !this.state.data) return <></> ;
+    if((this.state as any).loading || !(this.state as any).data) return <></> ;
     
     else{
       document.title = `Pedidos - Ranguinho Delivery de Comida`;

@@ -26,7 +26,7 @@ export function Class(props: PropPage){
     const onSubmit = (data) => {
       createUserWithEmailAndPassword(auth, data.email, data.password)
       .then(async (user: UserCredential | null) => {
-        if (user) {
+        if (user && auth && auth.currentUser) {
           setError('');
           await updateProfile(auth.currentUser, {displayName: data.name})
           props.navigate('/')

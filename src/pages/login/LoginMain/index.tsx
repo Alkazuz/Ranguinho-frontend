@@ -8,7 +8,6 @@ import { handleFirebaseError } from '../../../utils/firebaseError';
 import { providerFacebook, providerGoogle } from '../../../utils/providers';
 import LoginBase, { LoginPageClass } from '../LoginBase';
 
-import LogoBanner from '../../../../public/images/banner-login.png'
 
 import "./index.css"
 const auth = getAuth();
@@ -52,7 +51,7 @@ export class Class extends LoginPageClass{
       }
     }
 
-    const errorMsg = this.state.error;
+    const errorMsg = (this.state as any).error;
 
     return (
       <div className="container-login">
@@ -60,7 +59,7 @@ export class Class extends LoginPageClass{
           <div className="container">
           <div className="rounded-background"></div>
             <div className="image-left">
-              <LazyLoadImage src={LogoBanner} alt="" className="banner" />
+              <LazyLoadImage src='https://cdn.discordapp.com/attachments/1000408658452168734/1054972826655936583/banner-login.png' alt="" className="banner" />
             </div>
 
             <div className="login-right">

@@ -18,7 +18,7 @@ export class Class extends BasePage{
 
   constructor(props){
     super(props);
-    this.state = {
+    (this.state as any) = {
       loading: true,
       data: undefined,
       selectedProduct: undefined,
@@ -56,12 +56,12 @@ export class Class extends BasePage{
     }
 
     const productList = () => {
-      if(this.state.filter){
+      if((this.state as any).filter){
         return (
           <div className="products-list">
-            {this.state.data && this.state.data.products.filter((product: CardProductInterface) => 
-              product.name.toLowerCase().includes(this.state.filter.toLowerCase()) ||
-              product.description.toLowerCase().includes(this.state.filter.toLowerCase())
+            {(this.state as any).data && (this.state as any).data.products.filter((product: CardProductInterface) => 
+              product.name.toLowerCase().includes((this.state as any).filter.toLowerCase()) ||
+              product.description.toLowerCase().includes((this.state as any).filter.toLowerCase())
             ).map((product: CardProductInterface) => 
             <div key={product.id} onClick={() => this.setState({selectedProduct: product})}>
               <CardProduct product={product} />
@@ -72,7 +72,7 @@ export class Class extends BasePage{
 
       return (
         <div className="products-list">
-          {this.state.data && this.state.data.products
+          {(this.state as any).data && (this.state as any).data.products
           .map((product: CardProductInterface) => 
           <div key={product.id} onClick={() => this.setState({selectedProduct: product})}>
             <CardProduct product={product} />
@@ -81,32 +81,32 @@ export class Class extends BasePage{
       )
     }
     let price = '';
-    if(this.state.data)
-      price = this.state.data.delivery_info.fee == 0 ? 
-      `${this.state.data.delivery_info.timeMinMinutes}-${this.state.data.delivery_info.timeMaxMinutes} min • Grátis` : 
-      `${this.state.data.delivery_info.timeMinMinutes}-${this.state.data.delivery_info.timeMaxMinutes} min • ${this.state.data.delivery_info.fee.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`
+    if((this.state as any).data)
+      price = (this.state as any).data.delivery_info.fee == 0 ? 
+      `${(this.state as any).data.delivery_info.timeMinMinutes}-${((this.state as any) as any).data.delivery_info.timeMaxMinutes} min • Grátis` : 
+      `${(this.state as any).data.delivery_info.timeMinMinutes}-${(this.state as any).data.delivery_info.timeMaxMinutes} min • ${(this.state as any).data.delivery_info.fee.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'})}`
 
-    if(this.state.loading || !this.state.data) return <></> ;
+    if((this.state as any).loading || !(this.state as any).data) return <></> ;
     
     else{
-      document.title = `${this.state.data.name} - Ranguinho Delivery de Comida`;
+      document.title = `${(this.state as any).data.name} - Ranguinho Delivery de Comida`;
       return (
         <>
-          <NavbarComponent user={this.state.userInfo} onSignOut={this.signOut}/>
-          <NavbarComponentMobile user={this.state.userInfo} onSignOut={this.signOut}/>
+          <NavbarComponent user={(this.state as any).userInfo} onSignOut={this.signOut}/>
+          <NavbarComponentMobile user={(this.state as any).userInfo} onSignOut={this.signOut}/>
           <div className="content">
             
             <div className="content-restaurant box-div">
                 <div className="restaurant-content">
                     <div className="banner">
-                        <RestaurantBanner banner_url={this.state.data.bannerUrl} />
+                        <RestaurantBanner banner_url={(this.state as any).data.bannerUrl} />
                     </div>
                     <div className="restaurant-info">
                       <div className="logo">
-                          <LazyLoadImage src={this.state.data.logo} alt="" className="restaurant-logo" />
+                          <LazyLoadImage src={(this.state as any).data.logo} alt="" className="restaurant-logo" />
                       </div>
                       <div className="displayname font-fsp">
-                        <h1>{this.state.data.name}</h1>
+                        <h1>{(this.state as any).data.name}</h1>
                         <div className="rate">
                             <FaStar/>
                             <div className='rate-value font-figerona'>Novo</div></div>
@@ -136,7 +136,7 @@ export class Class extends BasePage{
                     </div>
                     
                     {productList()}
-                    <BuyProductCard product={this.state.selectedProduct} restaurant={this.state.data} user={this.state.userInfo} onClose={() => this.setState({selectedProduct: undefined})}/>
+                    <BuyProductCard product={(this.state as any).selectedProduct} restaurant={(this.state as any).data} user={(this.state as any).userInfo} onClose={() => this.setState({selectedProduct: undefined})}/>
                 </div>
             </div>
           </div>

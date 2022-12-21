@@ -9,7 +9,7 @@ function Searchbar(){
 
     const [input, setInput] = useState('')
 
-    const handleKeyDown = (event: KeyboardEvent<HTMLImageElement>) => {
+    const handleKeyDown = (event: KeyboardEvent<HTMLImageElement> | any) => {
         if (event.key === 'Enter') {
           const navigate = useNavigate();
           navigate(`/buscar?q=${input}`)

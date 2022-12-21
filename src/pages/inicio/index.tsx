@@ -17,7 +17,7 @@ export class Class extends BasePage{
   
   constructor(props){
     super(props);
-    this.state = {
+    (this.state as any) = {
         userInfo: undefined,
         data: undefined
     }
@@ -35,20 +35,20 @@ export class Class extends BasePage{
   }
 
   render(): ReactNode {
-    if(auth.currentUser && (this.state.userInfo == undefined || !this.state.userInfo.address)){
-      return (<AddressInput user={this.state.userInfo} navigate={this.props.navigate} />)
+    if(auth.currentUser && ((this.state as any).userInfo == undefined || !(this.state as any).userInfo.address)){
+      return (<AddressInput user={(this.state as any).userInfo} navigate={this.props.navigate} />)
     }
 
     return (
       <>
 
-        <NavbarComponent user={this.state.userInfo} onSignOut={this.signOut}/>
-        <NavbarComponentMobile user={this.state.userInfo} onSignOut={this.signOut}/>
+        <NavbarComponent user={(this.state as any).userInfo} onSignOut={this.signOut}/>
+        <NavbarComponentMobile user={(this.state as any).userInfo} onSignOut={this.signOut}/>
         
         <div className="content">
-          {this.state.data && <CategoryList restaurants={this.state.data.restaurants} categories={this.state.data.categories} />}
-          {this.state.data && <CardBannerList cards={this.state.data.banners}/>}
-          <ShopList user={this.state.userInfo} navigate={this.props.navigate}/>
+          {(this.state as any).data && <CategoryList restaurants={(this.state as any).data.restaurants} categories={(this.state as any).data.categories} />}
+          {(this.state as any).data && <CardBannerList cards={(this.state as any).data.banners}/>}
+          <ShopList user={(this.state as any).userInfo} navigate={this.props.navigate}/>
         </div>
       </>)
 

@@ -18,7 +18,7 @@ interface ShopInterface{
 function ShopList(props: ShopInterface){
 
     const [loading, setLoading] = useState(true);
-    const [data, setData] = useState(null)
+    const [data, setData] = useState<any[]>()
     const [page, setPage] = useState(0)
 
     let consultaAPI = async () => {
@@ -71,7 +71,7 @@ function ShopList(props: ShopInterface){
             <h1>Lojas</h1>
             <div className="cardlist">
                 {
-                    data.map((shop: RestaurantInterface) => <ShopCard navigate={props.navigate} key={shop.id} data={shop} user={props.user}/>)
+                    data && data.map((shop: RestaurantInterface) => <ShopCard navigate={props.navigate} key={shop.id} data={shop} user={props.user}/>)
                 }
                 
             </div>

@@ -16,7 +16,7 @@ export class Class extends BasePage{
   
   constructor(props){
     super(props);
-    this.state = {
+    (this.state as any) = {
         userInfo: undefined,
         data: undefined
     }
@@ -32,7 +32,7 @@ export class Class extends BasePage{
     return (
       <>
 
-        <AddressInput user={this.state.userInfo}/>
+        <AddressInput user={(this.state as any).userInfo} navigate={this.props.navigate}/>
       </>)
 
   }
